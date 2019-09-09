@@ -56,5 +56,8 @@ jobs:
           args: build
       - name: 'Publish: Trigger semantic release'
         uses: borales/actions-yarn@master
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
           args: semantic-release
