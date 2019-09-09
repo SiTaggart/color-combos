@@ -34,7 +34,6 @@
   "homepage": "https://github.com/SiTaggart/color-combos#readme",
   "dependencies": {
     "color": "3.1.2",
-    "global": "4.4.0",
     "lodash.uniq": "4.5.0"
   },
   "devDependencies": {
