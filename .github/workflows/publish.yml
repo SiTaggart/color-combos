@@ -1,0 +1,60 @@
+name: Test and Publish
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x]
+    steps:
+      - uses: actions/checkout@v1
+      - name: 'Init: Summon NodeJS'
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: 'Init: Install dependencies'
+        uses: borales/actions-yarn@master
+        with:
+          args: install
+      - name: 'Build: Trigger build staging site'
+        uses: borales/actions-yarn@master
+        with:
+          args: build
+      - name: 'Test: Type checking'
+        uses: borales/actions-yarn@master
+        with:
+          args: type-check
+      - name: 'Test: Jest'
+        uses: borales/actions-yarn@master
+        with:
+          args: test
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - uses: actions/checkout@v1
+      - name: 'Init: Summon NodeJS'
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: 'Init: Install dependencies'
+        uses: borales/actions-yarn@master
+        with:
+          args: install
+      - name: 'Build: Trigger build staging site'
+        uses: borales/actions-yarn@master
+        with:
+          args: build
+      - name: 'Publish: Trigger semantic release'
+        uses: borales/actions-yarn@master
+        with:
+          args: semantic-release

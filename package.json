@@ -1,6 +1,6 @@
 {
   "name": "color-combos",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "description": "Get accessibility information about colour combinations",
   "entry": "src/index.ts",
   "main": "dist/index.js",
@@ -14,11 +14,12 @@
     "compile": "rollup -c rollup.config.ts --environment NODE_ENV:production",
     "compile:dev": "rollup -c rollup.config.ts --environment NODE_ENV:development",
     "test": "jest",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SiTaggart/color-combos.git"
+    "url": "https://github.com/SiTaggart/color-combos.git"
   },
   "keywords": [
     "accessibility",
@@ -33,9 +34,7 @@
   "homepage": "https://github.com/SiTaggart/color-combos#readme",
   "dependencies": {
     "color": "3.1.2",
-    "global": "4.4.0",
-    "lodash.uniq": "4.5.0",
-    "semantic-release-cli": "5.2.1"
+    "lodash.uniq": "4.5.0"
   },
   "devDependencies": {
     "@types/color": "3.0.0",
@@ -68,7 +67,8 @@
     "rollup-plugin-typescript2": "0.21.2",
     "ts-jest": "24.0.2",
     "ts-node": "8.3.0",
-    "typescript": "3.6.2"
+    "typescript": "3.6.2",
+    "semantic-release": "15.13.24"
   },
   "jest": {
     "preset": "ts-jest",
