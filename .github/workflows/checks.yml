@@ -21,12 +21,14 @@ jobs:
         uses: borales/actions-yarn@master
         with:
           args: install
-      - name: 'Build: Trigger build staging site'
+      - name: 'Build: Trigger build'
         uses: borales/actions-yarn@master
         with:
           args: build
       - name: 'Bundlesize: Trigger bundlesize check'
         uses: borales/actions-yarn@master
+        env:
+          BUNDLESIZE_GITHUB_TOKEN: ${{ secrets.BUNDLESIZE_GITHUB_TOKEN }}
         with:
           args: bundlesize
       - name: 'Test: Type checking'
