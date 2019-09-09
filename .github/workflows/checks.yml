@@ -1,0 +1,39 @@
+name: Checks
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x]
+    steps:
+      - uses: actions/checkout@v1
+      - name: 'Init: Summon NodeJS'
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: 'Init: Install dependencies'
+        uses: borales/actions-yarn@master
+        with:
+          args: install
+      - name: 'Build: Trigger build staging site'
+        uses: borales/actions-yarn@master
+        with:
+          args: build
+      - name: 'Bundlesize: Trigger bundlesize check'
+        uses: borales/actions-yarn@master
+        with:
+          args: bundlesize
+      - name: 'Test: Type checking'
+        uses: borales/actions-yarn@master
+        with:
+          args: type-check
+      - name: 'Test: Jest'
+        uses: borales/actions-yarn@master
+        with:
+          args: test
