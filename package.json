@@ -1,0 +1,88 @@
+{
+  "name": "color-combos",
+  "version": "0.0.1",
+  "description": "Get accessibility information about colour combinations",
+  "entry": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "yarn clean && yarn compile",
+    "build:dev": "yarn clean && yarn compile:dev",
+    "bundlesize": "bundlesize",
+    "clean": "rm -rf ./dist",
+    "compile": "rollup -c rollup.config.ts --environment NODE_ENV:production",
+    "compile:dev": "rollup -c rollup.config.ts --environment NODE_ENV:development",
+    "test": "jest",
+    "type-check": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiTaggart/color-combos.git"
+  },
+  "keywords": [
+    "accessibility",
+    "color",
+    "a11y"
+  ],
+  "author": "Simon Taggart",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SiTaggart/color-combos/issues"
+  },
+  "homepage": "https://github.com/SiTaggart/color-combos#readme",
+  "dependencies": {
+    "color": "^3.1.2",
+    "global": "^4.4.0",
+    "lodash.uniq": "^4.5.0",
+    "semantic-release-cli": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/color": "^3.0.0",
+    "@types/eslint": "^6.1.1",
+    "@types/jest": "^24.0.18",
+    "@types/lodash": "^4.14.138",
+    "@types/lodash.uniq": "^4.5.6",
+    "@types/node": "^12.7.4",
+    "@typescript-eslint/eslint-plugin": "^2.1.0",
+    "@typescript-eslint/parser": "^2.1.0",
+    "bundlesize": "^0.18.0",
+    "eslint": "^6.3.0",
+    "eslint-config-prettier": "^6.2.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.17.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-unicorn": "^10.0.0",
+    "husky": "^3.0.5",
+    "jest": "^24.9.0",
+    "precise-commits": "^1.0.2",
+    "prettier": "^1.18.2",
+    "rollup": "^1.16.2",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-node-resolve": "^5.1.0",
+    "rollup-plugin-terser": "^5.0.0",
+    "rollup-plugin-typescript2": "^0.21.2",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.6.2"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
+  "bundlesize": [
+    {
+      "path": "./dist/*.js",
+      "maxSize": "11 kB"
+    }
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "precise-commits"
+    }
+  }
+}
