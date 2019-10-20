@@ -40,8 +40,8 @@
     "lodash.uniq": "4.5.0"
   },
   "devDependencies": {
-    "@sitaggart/eslint-config": "0.2.7",
-    "@sitaggart/eslint-config-ts": "0.2.6",
+    "@sitaggart/eslint-config": "0.2.9",
+    "@sitaggart/eslint-config-ts": "0.2.7",
     "@sitaggart/prettier-config": "0.2.0",
     "@types/color": "3.0.0",
     "@types/eslint": "6.1.2",
