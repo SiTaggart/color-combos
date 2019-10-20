@@ -13,26 +13,27 @@ jobs:
         node-version: [10.x, 12.x]
     steps:
       - uses: actions/checkout@v1
-      - name: 'Init: Summon NodeJS'
-        uses: actions/setup-node@v1
+      - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: 'Init: Install dependencies'
-        uses: borales/actions-yarn@master
-        with:
-          args: install
-      - name: 'Build: Trigger build'
-        uses: borales/actions-yarn@master
-        with:
-          args: build
-      - name: 'Test: Type checking'
-        uses: borales/actions-yarn@master
-        with:
-          args: type-check
-      - name: 'Test: Jest'
-        uses: borales/actions-yarn@master
-        with:
-          args: test
+      - name: Increase watchers
+        run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+      - name: "Init: Install dependencies"
+        run: yarn install
+      - name: "Build: Trigger build"
+        run: yarn build
+      - name: "Bundlesize: Trigger bundlesize check"
+        env:
+          BUNDLESIZE_GITHUB_TOKEN: ${{ secrets.BUNDLESIZE_GITHUB_TOKEN }}
+        run: yarn bundlesize
+      - name: "Test: Type checking"
+        run: yarn type-check
+      - name: "Test: Jest"
+        run: yarn test
+      - name: "Lint: eslint"
+        run: yarn eslint
+      - name: "Lint: prettier"
+        run: yarn prettier
 
   deploy:
     needs: test
@@ -42,22 +43,15 @@ jobs:
         node-version: [12.x]
     steps:
       - uses: actions/checkout@v1
-      - name: 'Init: Summon NodeJS'
-        uses: actions/setup-node@v1
+      - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: 'Init: Install dependencies'
-        uses: borales/actions-yarn@master
-        with:
-          args: install
-      - name: 'Build: Trigger build staging site'
-        uses: borales/actions-yarn@master
-        with:
-          args: build
-      - name: 'Publish: Trigger semantic release'
-        uses: borales/actions-yarn@master
+      - name: "Init: Install dependencies"
+        run: yarn install
+      - name: "Build: Trigger build staging site"
+        run: yarn build
+      - name: "Publish: Trigger semantic release"
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        with:
-          args: semantic-release
+        run: yarn semantic-release

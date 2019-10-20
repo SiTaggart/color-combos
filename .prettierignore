@@ -1,4 +1,3 @@
-*.md
 *.json
 dist/
 *.d.ts

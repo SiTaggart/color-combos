@@ -106,6 +106,7 @@ describe('ColorCombos', (): void => {
   });
 
   it('should return return false if not passed an array or object ', (): void => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
     // @ts-ignore
     expect(ColorCombos('#ddd')).toEqual(false);
   });
@@ -181,9 +182,7 @@ describe('ColorCombos', (): void => {
   });
 
   it('should not filter out dupes when passed uniq false', (): void => {
-    expect(
-      ColorCombos(['white', 'red', 'white'], { compact: true, uniq: false })
-    ).toEqual([
+    expect(ColorCombos(['white', 'red', 'white'], { compact: true, uniq: false })).toEqual([
       {
         combinations: [
           {
@@ -263,9 +262,7 @@ describe('ColorCombos', (): void => {
   });
 
   it('should only return combonations that meet a contrast threshold', (): void => {
-    expect(
-      ColorCombos(mockThresholdColors, { compact: true, threshold: 3.5 })
-    ).toEqual([
+    expect(ColorCombos(mockThresholdColors, { compact: true, threshold: 3.5 })).toEqual([
       {
         combinations: [
           {
