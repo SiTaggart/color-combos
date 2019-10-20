@@ -13,7 +13,7 @@
     "clean": "rm -rf ./dist",
     "compile": "rollup -c rollup.config.ts --environment NODE_ENV:production",
     "compile:dev": "rollup -c rollup.config.ts --environment NODE_ENV:development",
-    "eslint": "eslint --ext .tsx,.ts,.js ./",
+    "eslint": "eslint --ext .tsx,.ts,.js ./src",
     "prettier": "prettier --list-different '**/*.{ts,tsx,js}'",
     "prettier-clean": "prettier --write '**/*.{ts,tsx,js}'",
     "test": "jest",
