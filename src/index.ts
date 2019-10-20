@@ -65,10 +65,7 @@ const ColorCombos = (
     uniq: true,
   };
 
-  const combinedOptions = Object.assign<Options, Options>(
-    DEFAULT_OPTIONS,
-    options
-  );
+  const combinedOptions = Object.assign<Options, Options>(DEFAULT_OPTIONS, options);
 
   if (!Array.isArray(colors)) {
     if (typeof colors === 'object') {
