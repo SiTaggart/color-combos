@@ -13,9 +13,9 @@
     "clean": "rm -rf ./dist",
     "compile": "rollup -c rollup.config.ts --environment NODE_ENV:production",
     "compile:dev": "rollup -c rollup.config.ts --environment NODE_ENV:development",
-    "eslint": "eslint --ext .tsx,.ts,.js ./src/**/*",
+    "eslint": "eslint --ext .tsx,.ts,.js ./",
     "prettier": "prettier --list-different '**/*.{ts,tsx,js}'",
-    "prettier-clean": "prettier --write '{.storybook,packages}/**/*.{ts,tsx}'",
+    "prettier-clean": "prettier --write '**/*.{ts,tsx,js}'",
     "test": "jest",
     "type-check": "tsc",
     "semantic-release": "semantic-release"
