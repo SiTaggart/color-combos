@@ -13,29 +13,22 @@ jobs:
         node-version: [10.x, 12.x]
     steps:
       - uses: actions/checkout@v1
-      - name: 'Init: Summon NodeJS'
-        uses: actions/setup-node@v1
+      - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: 'Init: Install dependencies'
-        uses: borales/actions-yarn@master
-        with:
-          args: install
-      - name: 'Build: Trigger build'
-        uses: borales/actions-yarn@master
-        with:
-          args: build
-      - name: 'Bundlesize: Trigger bundlesize check'
-        uses: borales/actions-yarn@master
+      - name: "Init: Install dependencies"
+        run: yarn install
+      - name: "Build: Trigger build"
+        run: yarn build
+      - name: "Bundlesize: Trigger bundlesize check"
         env:
           BUNDLESIZE_GITHUB_TOKEN: ${{ secrets.BUNDLESIZE_GITHUB_TOKEN }}
-        with:
-          args: bundlesize
-      - name: 'Test: Type checking'
-        uses: borales/actions-yarn@master
-        with:
-          args: type-check
-      - name: 'Test: Jest'
-        uses: borales/actions-yarn@master
-        with:
-          args: test
+        run: yarn bundlesize
+      - name: "Test: Type checking"
+        run: yarn type-check
+      - name: "Test: Jest"
+        run: yarn test
+      - name: "Lint: eslint"
+        run: yarn eslint
+      - name: "Lint: prettier"
+        run: yarn prettier
