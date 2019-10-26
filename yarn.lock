@@ -449,14 +449,14 @@
     "@typescript-eslint/parser" "2.5.0"
     eslint-config-airbnb-typescript "5.1.0"
 
-"@sitaggart/eslint-config@0.2.11":
-  version "0.2.11"
-  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config/-/eslint-config-0.2.11.tgz#209795b2cf78cdb57bca8afa4ab2d5889e4d0e64"
-  integrity sha512-lSFXBozYGuziZ/vb8+lRY7hcS+aXC4Zxiuj0WVNbaLJjWCBgzu6p6MpBGA/JOaMjvwqMpES+JiWzKVbvcm+XYw==
+"@sitaggart/eslint-config@0.2.12":
+  version "0.2.12"
+  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config/-/eslint-config-0.2.12.tgz#1e69523c1a5f7c7014365e073e56b07bce77dd1a"
+  integrity sha512-Vdjxacjp4wLdLZtq2IgTJ76+NtAT6AtsWxQmH12WTI1/ezGJKYwajS30MPhLkQ2IAzj20vUKSowR4Vqlv53J0A==
   dependencies:
     babel-eslint "10.0.3"
     eslint-config-airbnb-base "14.0.0"
-    eslint-config-prettier "6.4.0"
+    eslint-config-prettier "6.5.0"
     eslint-config-standard "14.1.0"
     eslint-plugin-cypress "2.7.0"
     eslint-plugin-eslint-comments "3.1.2"
@@ -2329,10 +2329,10 @@ eslint-config-airbnb@^18.0.1:
     object.assign "^4.1.0"
     object.entries "^1.1.0"
 
-eslint-config-prettier@6.4.0:
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.4.0.tgz#0a04f147e31d33c6c161b2dd0971418ac52d0477"
-  integrity sha512-YrKucoFdc7SEko5Sxe4r6ixqXPDP1tunGw91POeZTTRKItf/AMFYt/YLEQtZMkR2LVpAVhcAcZgcWpm1oGPW7w==
+eslint-config-prettier@6.5.0:
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.5.0.tgz#aaf9a495e2a816865e541bfdbb73a65cc162b3eb"
+  integrity sha512-cjXp8SbO9VFGW/Z7mbTydqS9to8Z58E5aYhj3e1+Hx7lS9s6gL5ILKNpCqZAFOVYRcSkWPFYljHrEh8QFEK5EQ==
   dependencies:
     get-stdin "^6.0.0"
 
