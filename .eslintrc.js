@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ['@sitaggart/eslint-config', '@sitaggart/eslint-config-ts'],
+  extends: ['@sitaggart/eslint-config-ts'],
 };
