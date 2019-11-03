@@ -164,4 +164,5 @@ const ColorCombos = (
   return results;
 };
 
+// eslint-disable-next-line import/no-default-export
 export default ColorCombos;
