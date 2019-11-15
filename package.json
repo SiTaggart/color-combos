@@ -47,7 +47,7 @@
     "@types/jest": "24.0.23",
     "@types/lodash": "4.14.148",
     "@types/lodash.uniq": "4.5.6",
-    "@types/node": "12.12.7",
+    "@types/node": "12.12.8",
     "bundlesize": "0.18.0",
     "eslint": "6.6.0",
     "husky": "3.0.9",
