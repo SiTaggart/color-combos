@@ -9,15 +9,15 @@ interface ComboColor {
   contrast: (color: ComboColor) => number;
 }
 
-export interface ColorCombinationAccessibility {
+export interface Accessibility {
   aa: boolean;
   aaLarge: boolean;
   aaa: boolean;
   aaaLarge: boolean;
 }
 
-export interface ColorCombinationTypes {
-  accessibility: ColorCombinationAccessibility;
+export interface Combination {
+  accessibility: Accessibility;
   color?: number[];
   contrast: number;
   hex: string;
@@ -25,13 +25,12 @@ export interface ColorCombinationTypes {
   valpha?: number;
 }
 
-export interface ColorCombosTypes {
+export interface ColorCombo {
   color?: number[];
-  combinations: ColorCombinationTypes[];
+  combinations: Combination[];
   hex: string;
   model?: string;
   valpha?: number;
-  [key: number]: ColorCombosTypes;
 }
 
 interface Options {
@@ -43,9 +42,9 @@ interface Options {
 const ColorCombos = (
   colors: string[] | { [name: string]: string },
   options: Options = {}
-): ColorCombosTypes[] | false => {
+): ColorCombo[] | false => {
   let arr: ComboColor[] = [];
-  let results: ColorCombosTypes[] = [];
+  let results: ColorCombo[] = [];
 
   const MINIMUMS: {
     aa: number;
@@ -90,8 +89,8 @@ const ColorCombos = (
   }
 
   results = arr.map(
-    (color): ColorCombosTypes => {
-      const result: ColorCombosTypes = combinedOptions.compact
+    (color): ColorCombo => {
+      const result: ColorCombo = combinedOptions.compact
         ? {
             hex: '',
             combinations: [],
@@ -115,8 +114,8 @@ const ColorCombos = (
           return true;
         })
         .map(
-          (bg): ColorCombinationTypes => {
-            let combination: ColorCombinationTypes = combinedOptions.compact
+          (bg): Combination => {
+            let combination: Combination = combinedOptions.compact
               ? {
                   accessibility: {
                     aa: false,
