@@ -42,11 +42,11 @@ import ColorCombos from 'color-combos';
 
 ## Usage
 
-`ColorCombos` takes two arguments; `colors: : string[] | { [name: string]: string }` and optional `options: { compact?: boolean; threshold?: number; uniq?: boolean; }`
+`ColorCombos` takes two arguments; `colors: string[] | { [name: string]: string }` and optional `options: { compact?: boolean; threshold?: number; uniq?: boolean; }`
 
 ```ts
 ColorCombos(
-  colors: : string[] | { [name: string]: string },
+  colors: string[] | { [name: string]: string },
   options?: {
     compact?: boolean;
     threshold?: number;
@@ -55,7 +55,7 @@ ColorCombos(
 )
 ```
 
-### `colors: : string[] | { [name: string]: string }`
+### `colors: string[] | { [name: string]: string }`
 
 The colors argument will accept either an array of colors as strings, or an object of colors where the values are strings.
 
@@ -214,13 +214,13 @@ returns
 
 ```json
 {
-  "threshold": 0,
   "compact": false,
+  "threshold": 0,
   "uniq": true
 }
 ```
 
-#### `compact`
+#### `compact: boolean`
 
 If all you're after is the accessibility information for each color combination you can set `compact` to true and `ColorCombos` will omit non-essential information about each color.
 
@@ -280,7 +280,7 @@ returns
 ]
 ```
 
-#### `threshold`
+#### `threshold: number`
 
 If you would like to omit color combinations that do not meet a certain color contrast ratio, you can set a contrast ratio `threshold` and `ColorCombos` will omit colors that do not meet it.
 
@@ -330,7 +330,7 @@ This will omit color combinations that do not meet at least a color contrast rat
 ]
 ```
 
-#### `uniq`
+#### `uniq: boolean`
 
 By default, `ColorCombos` will only return uniq colors from the supplied arguments. If you would like it to not omit duplicates, set the `uniq` option to `false`
 
