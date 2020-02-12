@@ -610,10 +610,10 @@
   dependencies:
     type-detect "4.0.8"
 
-"@sitaggart/eslint-config-ts@0.5.60":
-  version "0.5.60"
-  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config-ts/-/eslint-config-ts-0.5.60.tgz#e1055d0c80849708a127861b774f98b56862e18d"
-  integrity sha512-nKisQtqi2dx1p4/zDaPP5fM3W33c8Ig5elVBKjn+Qgsp9eO/y393+gCs7L1SBI0GQ0JRw1qYMWLnhG0HvB0kfw==
+"@sitaggart/eslint-config-ts@0.5.61":
+  version "0.5.61"
+  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config-ts/-/eslint-config-ts-0.5.61.tgz#60b57714f2c9dcacc70e46f91e04b88979336de9"
+  integrity sha512-cz82HJsMRh9eJH0D+acd9+V74YH9r74sr1/KWruVa4DEelpRwpP9QbZd1FVIXnvuWAIJLyakFBDUX888Z+y7dQ==
   dependencies:
     "@typescript-eslint/eslint-plugin" "2.19.2"
     "@typescript-eslint/parser" "2.19.2"
@@ -632,7 +632,7 @@
     eslint-plugin-react "7.18.3"
     eslint-plugin-react-hooks "2.3.0"
     eslint-plugin-standard "4.0.1"
-    eslint-plugin-unicorn "16.1.0"
+    eslint-plugin-unicorn "16.1.1"
 
 "@sitaggart/prettier-config@0.2.0":
   version "0.2.0"
@@ -2743,10 +2743,10 @@ eslint-plugin-standard@4.0.1:
   resolved "https://registry.yarnpkg.com/eslint-plugin-standard/-/eslint-plugin-standard-4.0.1.tgz#ff0519f7ffaff114f76d1bd7c3996eef0f6e20b4"
   integrity sha512-v/KBnfyaOMPmZc/dmc6ozOdWqekGp7bBGq4jLAecEfPGmfKiWS4sA8sC0LqiV9w5qmXAtXVn4M3p1jSyhY85SQ==
 
-eslint-plugin-unicorn@16.1.0:
-  version "16.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-unicorn/-/eslint-plugin-unicorn-16.1.0.tgz#7af9f2d056c0997776a112c66c6c4f02792bdc56"
-  integrity sha512-aZbnl0TGXpQngzY5Ou0sj7YxTZYxfdWKhyLV/MWBeNQ2gGWMiq7CoJApZQJq5al2zKkep3CIWI7RFmUWnKSBxg==
+eslint-plugin-unicorn@16.1.1:
+  version "16.1.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-unicorn/-/eslint-plugin-unicorn-16.1.1.tgz#012c598d71914ef30f5d386dd85110e59f2ef999"
+  integrity sha512-IMxCsntb0T8s660Irc40gtzXtxuXHcOn36G9G8OYKfiseBD/kNrA1cNJhsJ0xQteDASGrFwqdzBsYEkUvczhOA==
   dependencies:
     ci-info "^2.0.0"
     clean-regexp "^1.0.0"
