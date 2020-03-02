@@ -26,8 +26,6 @@ jobs:
         env:
           BUNDLESIZE_GITHUB_TOKEN: ${{ secrets.BUNDLESIZE_GITHUB_TOKEN }}
         run: yarn bundlesize
-      - name: "Test: Type checking"
-        run: yarn type-check
       - name: "Test: Jest"
         run: yarn test
       - name: "Lint: eslint"

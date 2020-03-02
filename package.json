@@ -17,7 +17,6 @@
     "prettier": "prettier --list-different '**/*.{ts,tsx,js}'",
     "prettier-clean": "prettier --write '**/*.{ts,tsx,js}'",
     "test": "jest",
-    "type-check": "tsc",
     "semantic-release": "semantic-release"
   },
   "repository": {
