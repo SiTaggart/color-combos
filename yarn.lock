@@ -618,16 +618,16 @@
   dependencies:
     type-detect "4.0.8"
 
-"@sitaggart/eslint-config-ts@0.5.81":
-  version "0.5.81"
-  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config-ts/-/eslint-config-ts-0.5.81.tgz#ead231942b070a5ba46c1181f777ad83c5719d5e"
-  integrity sha512-hozXYLHBJbu2yPU1XAK0BM0c+8cyhHqFIjWV+VJWDBYYhp+L86hTgYj67IhcJ0jmFlEPiMsf2CSfnfP0NQJXtw==
+"@sitaggart/eslint-config-ts@0.5.82":
+  version "0.5.82"
+  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config-ts/-/eslint-config-ts-0.5.82.tgz#848746e3fbfd979d1f8ed5fd58ab8147d980978f"
+  integrity sha512-awNGJW4o7/GeL14W6fesN2r+QhFc0qkcNV4kyfbZ+ATurFJkk1rzYhioAlpmscKZvLKNQVD/38+uXj73624qgg==
   dependencies:
     "@typescript-eslint/eslint-plugin" "2.24.0"
     "@typescript-eslint/parser" "2.24.0"
     eslint-config-airbnb-typescript "7.2.0"
     eslint-config-prettier "6.10.0"
-    eslint-config-standard "14.1.0"
+    eslint-config-standard "14.1.1"
     eslint-config-standard-jsx "8.1.0"
     eslint-plugin-cypress "2.10.3"
     eslint-plugin-eslint-comments "3.1.2"
@@ -2622,10 +2622,10 @@ eslint-config-standard-jsx@8.1.0:
   resolved "https://registry.yarnpkg.com/eslint-config-standard-jsx/-/eslint-config-standard-jsx-8.1.0.tgz#314c62a0e6f51f75547f89aade059bec140edfc7"
   integrity sha512-ULVC8qH8qCqbU792ZOO6DaiaZyHNS/5CZt3hKqHkEhVlhPEPN3nfBqqxJCyp59XrjIBZPu1chMYe9T2DXZ7TMw==
 
-eslint-config-standard@14.1.0:
-  version "14.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-14.1.0.tgz#b23da2b76fe5a2eba668374f246454e7058f15d4"
-  integrity sha512-EF6XkrrGVbvv8hL/kYa/m6vnvmUT+K82pJJc4JJVMM6+Qgqh0pnwprSxdduDLB9p/7bIxD+YV5O0wfb8lmcPbA==
+eslint-config-standard@14.1.1:
+  version "14.1.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-14.1.1.tgz#830a8e44e7aef7de67464979ad06b406026c56ea"
+  integrity sha512-Z9B+VR+JIXRxz21udPTL9HpFMyoMUEeX1G251EQ6e05WD9aPVtVBn09XUmZ259wCMlCDmYDSZG62Hhm+ZTJcUg==
 
 eslint-import-resolver-node@^0.3.2:
   version "0.3.2"
