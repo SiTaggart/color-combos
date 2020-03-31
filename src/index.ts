@@ -68,7 +68,7 @@ const ColorCombos = (
 
   if (!Array.isArray(colors)) {
     if (typeof colors === 'object') {
-      arr = Object.keys(colors).map(key => (Color(colors[key]) as unknown) as ComboColor);
+      arr = Object.keys(colors).map((key) => (Color(colors[key]) as unknown) as ComboColor);
 
       if (combinedOptions.uniq) {
         arr = uniq(arr);
@@ -84,7 +84,7 @@ const ColorCombos = (
     }
 
     if (uniqueColors != null) {
-      arr = uniqueColors.map(color => (Color(color) as unknown) as ComboColor);
+      arr = uniqueColors.map((color) => (Color(color) as unknown) as ComboColor);
     }
   }
 
