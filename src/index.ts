@@ -83,7 +83,7 @@ const ColorCombos = (
       uniqueColors = uniq(colors);
     }
 
-    if (uniqueColors != null) {
+    if (uniqueColors !== undefined) {
       arr = uniqueColors.map((color) => (Color(color) as unknown) as ComboColor);
     }
   }
@@ -108,7 +108,7 @@ const ColorCombos = (
       result.combinations = arr
         .filter((bg): boolean => color !== bg)
         .filter((bg): boolean => {
-          if (combinedOptions.threshold != null) {
+          if (combinedOptions.threshold !== undefined) {
             return color.contrast(bg) > combinedOptions.threshold;
           }
           return true;
