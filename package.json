@@ -78,5 +78,8 @@
     "hooks": {
       "pre-commit": "precise-commits"
     }
+  },
+  "release": {
+    "branches": ["main"]
   }
 }
