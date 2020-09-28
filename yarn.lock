@@ -843,10 +843,10 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@sitaggart/eslint-config-ts@0.5.180":
-  version "0.5.180"
-  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config-ts/-/eslint-config-ts-0.5.180.tgz#853af31556bbdfa837ff5ed729edb5f8528ec19a"
-  integrity sha512-HGvQyWs0fBUIFMJR60L98PwYAE3XcHmQ/IYNMdyEsIWMKQrnhn5RO+v+uUu9zVdFxHTGaZ3Jv4huQ+6MzyP3eA==
+"@sitaggart/eslint-config-ts@0.5.182":
+  version "0.5.182"
+  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config-ts/-/eslint-config-ts-0.5.182.tgz#c509d0235594770df8edfa6cea1147db4bf9c6d5"
+  integrity sha512-Qza+aRakNwhq98A/AQpMg9ea51KJ0J1eJUnBAawcWeklLER6QIhEa/UjkkrrcYjGcENtymvQesv3VVA2qmO9cQ==
   dependencies:
     "@typescript-eslint/eslint-plugin" "4.2.0"
     "@typescript-eslint/parser" "4.2.0"
@@ -856,7 +856,7 @@
     eslint-config-standard-jsx "8.1.0"
     eslint-plugin-cypress "2.11.1"
     eslint-plugin-eslint-comments "3.2.0"
-    eslint-plugin-import "2.22.0"
+    eslint-plugin-import "2.22.1"
     eslint-plugin-jest "24.0.2"
     eslint-plugin-jsx-a11y "6.3.1"
     eslint-plugin-node "11.1.0"
@@ -2935,10 +2935,10 @@ eslint-config-standard@14.1.1:
   resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-14.1.1.tgz#830a8e44e7aef7de67464979ad06b406026c56ea"
   integrity sha512-Z9B+VR+JIXRxz21udPTL9HpFMyoMUEeX1G251EQ6e05WD9aPVtVBn09XUmZ259wCMlCDmYDSZG62Hhm+ZTJcUg==
 
-eslint-import-resolver-node@^0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.3.tgz#dbaa52b6b2816b50bc6711af75422de808e98404"
-  integrity sha512-b8crLDo0M5RSe5YG8Pu2DYBj71tSB6OvXkfzwbJU2w7y8P4/yo0MyF8jU26IEuEuHF2K5/gcAJE3LhQGqBBbVg==
+eslint-import-resolver-node@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.4.tgz#85ffa81942c25012d8231096ddf679c03042c717"
+  integrity sha512-ogtf+5AB/O+nM6DIeBUNr2fuT7ot9Qg/1harBfBtaP13ekEWFQEEMP94BCB7zaNW3gyY+8SHYF00rnqYwXKWOA==
   dependencies:
     debug "^2.6.9"
     resolve "^1.13.1"
@@ -2974,17 +2974,17 @@ eslint-plugin-eslint-comments@3.2.0:
     escape-string-regexp "^1.0.5"
     ignore "^5.0.5"
 
-eslint-plugin-import@2.22.0:
-  version "2.22.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.22.0.tgz#92f7736fe1fde3e2de77623c838dd992ff5ffb7e"
-  integrity sha512-66Fpf1Ln6aIS5Gr/55ts19eUuoDhAbZgnr6UxK5hbDx6l/QgQgx61AePq+BV4PP2uXQFClgMVzep5zZ94qqsxg==
+eslint-plugin-import@2.22.1:
+  version "2.22.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.22.1.tgz#0896c7e6a0cf44109a2d97b95903c2bb689d7702"
+  integrity sha512-8K7JjINHOpH64ozkAhpT3sd+FswIZTfMZTjdx052pnWrgRCVfp8op9tbjpAk3DdUeI/Ba4C8OjdC0r90erHEOw==
   dependencies:
     array-includes "^3.1.1"
     array.prototype.flat "^1.2.3"
     contains-path "^0.1.0"
     debug "^2.6.9"
     doctrine "1.5.0"
-    eslint-import-resolver-node "^0.3.3"
+    eslint-import-resolver-node "^0.3.4"
     eslint-module-utils "^2.6.0"
     has "^1.0.3"
     minimatch "^3.0.4"
