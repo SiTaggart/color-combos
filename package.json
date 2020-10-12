@@ -42,7 +42,7 @@
     "@sitaggart/eslint-config-ts": "0.5.190",
     "@sitaggart/prettier-config": "0.2.0",
     "@types/color": "3.0.1",
-    "@types/eslint": "7.2.3",
+    "@types/eslint": "7.2.4",
     "@types/jest": "26.0.14",
     "@types/lodash": "4.14.161",
     "@types/lodash.uniq": "4.5.6",
