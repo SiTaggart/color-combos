@@ -856,10 +856,10 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@sitaggart/eslint-config-ts@0.5.209":
-  version "0.5.209"
-  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config-ts/-/eslint-config-ts-0.5.209.tgz#328e8595f319706c6443f639812d45075928a6fb"
-  integrity sha512-iAAZHl0gENnznrZUZRw9CZ1woI5b/UnJxTrgh14NSof5eNWxavJlho2rd0NW4GxErZmG9KC2gizIFhoJaGNOug==
+"@sitaggart/eslint-config-ts@0.5.210":
+  version "0.5.210"
+  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config-ts/-/eslint-config-ts-0.5.210.tgz#0998c3f8c67e98e60234f585a1b3bcb903e53d9d"
+  integrity sha512-WFLMGrfcavpuOvVpXvwzeC3tfohZAnXj1uHuPgB3u3SqTxS6DQA+UJCcjTseJyBniTUWkx+HPl4Ebp/9ayANXQ==
   dependencies:
     "@typescript-eslint/eslint-plugin" "4.6.0"
     "@typescript-eslint/parser" "4.6.0"
