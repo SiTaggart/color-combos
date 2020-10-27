@@ -880,10 +880,10 @@
     eslint-plugin-standard "4.0.2"
     eslint-plugin-unicorn "23.0.0"
 
-"@sitaggart/prettier-config@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@sitaggart/prettier-config/-/prettier-config-0.2.0.tgz#84bb898d8b976774ce814de23d9d4a3b96a75ce3"
-  integrity sha512-nnY01iFU0NlKelL0DoX3dOJuyAVcEy0m45xNF/yUMTOaagm7ifoi/Ac/+EGnhFIaGpalB1wiceOK/v6EmMMSFg==
+"@sitaggart/prettier-config@0.2.5":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@sitaggart/prettier-config/-/prettier-config-0.2.5.tgz#0b43cdedbb8a6c2aec92185c4957a7e70b6cabc9"
+  integrity sha512-r/ehqaVplJslm3/CD9Mi82LTSCu1awtzUXg5n4JaStEFLOCI4aNNUFnjvvCqSc/BmreH7ms7MR9Wq+SnNErQZw==
 
 "@types/babel__core@^7.0.0":
   version "7.1.9"
