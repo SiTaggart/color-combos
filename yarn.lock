@@ -856,16 +856,16 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@sitaggart/eslint-config-ts@0.5.210":
-  version "0.5.210"
-  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config-ts/-/eslint-config-ts-0.5.210.tgz#0998c3f8c67e98e60234f585a1b3bcb903e53d9d"
-  integrity sha512-WFLMGrfcavpuOvVpXvwzeC3tfohZAnXj1uHuPgB3u3SqTxS6DQA+UJCcjTseJyBniTUWkx+HPl4Ebp/9ayANXQ==
+"@sitaggart/eslint-config-ts@0.5.212":
+  version "0.5.212"
+  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config-ts/-/eslint-config-ts-0.5.212.tgz#8ee31b3680f85dd6de5bb06434b2d121cdaf562a"
+  integrity sha512-YqybgaoEjjG9nx5lsu/S4dJg5T6cA64AIrVYwnPpNcz4KmrVdF6QVSebl5DX8iD/y/smvASXnffp5bOHbKYu9g==
   dependencies:
     "@typescript-eslint/eslint-plugin" "4.6.0"
     "@typescript-eslint/parser" "4.6.0"
     eslint-config-airbnb-typescript "12.0.0"
-    eslint-config-prettier "6.14.0"
-    eslint-config-standard "15.0.0"
+    eslint-config-prettier "6.15.0"
+    eslint-config-standard "15.0.1"
     eslint-config-standard-jsx "9.0.0"
     eslint-plugin-cypress "2.11.2"
     eslint-plugin-eslint-comments "3.2.0"
@@ -3040,10 +3040,10 @@ eslint-config-airbnb@18.2.0:
     object.assign "^4.1.0"
     object.entries "^1.1.2"
 
-eslint-config-prettier@6.14.0:
-  version "6.14.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.14.0.tgz#390e7863a8ae99970981933826476169285b3a27"
-  integrity sha512-DbVwh0qZhAC7CNDWcq8cBdK6FcVHiMTKmCypOPWeZkp9hJ8xYwTaWSa6bb6cjfi8KOeJy0e9a8Izxyx+O4+gCQ==
+eslint-config-prettier@6.15.0:
+  version "6.15.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.15.0.tgz#7f93f6cb7d45a92f1537a70ecc06366e1ac6fed9"
+  integrity sha512-a1+kOYLR8wMGustcgAjdydMsQ2A/2ipRPwRKUmfYaSxc9ZPcrku080Ctl6zrZzZNs/U82MjSv+qKREkoq3bJaw==
   dependencies:
     get-stdin "^6.0.0"
 
@@ -3052,10 +3052,10 @@ eslint-config-standard-jsx@9.0.0:
   resolved "https://registry.yarnpkg.com/eslint-config-standard-jsx/-/eslint-config-standard-jsx-9.0.0.tgz#a65d879157406e74a3be53201882d471bbda05ff"
   integrity sha512-e9ezaClB5YdTYqGUd3wReKC1si8XRn234tmME+3qebQ+KHtH92B6dr4LE6qPjK9AYe9XfwDK/xgQSwyCKQwv5Q==
 
-eslint-config-standard@15.0.0:
-  version "15.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-15.0.0.tgz#459f823b47ac0541b0a22b1d0a161a9da543f687"
-  integrity sha512-MZ8KRhUJLtMbjQo9PsEzFG29vqbQJfLoLBHrTaAaFMtDx9PIm1GZgyUanOLgf1xOE1aWrtZZSbxBYCy8dJCCBg==
+eslint-config-standard@15.0.1:
+  version "15.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-15.0.1.tgz#1262eafaba66f4f03fdf3cf655a28aa8b40868b7"
+  integrity sha512-UGorkix49kBium7Y124o2U9Qy7Lpa+nO0FsaqQSIPeno5hGNxZtSBJbqJX6gtpYfDFWCtqCAN9wyK+oDd9jT7Q==
 
 eslint-import-resolver-node@^0.3.4:
   version "0.3.4"
