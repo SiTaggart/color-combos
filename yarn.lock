@@ -874,16 +874,16 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@sitaggart/eslint-config-ts@0.5.212":
-  version "0.5.212"
-  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config-ts/-/eslint-config-ts-0.5.212.tgz#8ee31b3680f85dd6de5bb06434b2d121cdaf562a"
-  integrity sha512-YqybgaoEjjG9nx5lsu/S4dJg5T6cA64AIrVYwnPpNcz4KmrVdF6QVSebl5DX8iD/y/smvASXnffp5bOHbKYu9g==
+"@sitaggart/eslint-config-ts@0.5.213":
+  version "0.5.213"
+  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config-ts/-/eslint-config-ts-0.5.213.tgz#afbf0a45583550e57fa0da06b83b572a417f9a56"
+  integrity sha512-edQYbh/aYLcYIMRChP9voMMINoYcqyljqFVb3GHgQ+BBDV8nTceDBnpMmm3btgCDfWpn6mAMlipl0nJFAfGRGA==
   dependencies:
     "@typescript-eslint/eslint-plugin" "4.6.0"
     "@typescript-eslint/parser" "4.6.0"
     eslint-config-airbnb-typescript "12.0.0"
     eslint-config-prettier "6.15.0"
-    eslint-config-standard "15.0.1"
+    eslint-config-standard "16.0.1"
     eslint-config-standard-jsx "9.0.0"
     eslint-plugin-cypress "2.11.2"
     eslint-plugin-eslint-comments "3.2.0"
@@ -3076,10 +3076,10 @@ eslint-config-standard-jsx@9.0.0:
   resolved "https://registry.yarnpkg.com/eslint-config-standard-jsx/-/eslint-config-standard-jsx-9.0.0.tgz#a65d879157406e74a3be53201882d471bbda05ff"
   integrity sha512-e9ezaClB5YdTYqGUd3wReKC1si8XRn234tmME+3qebQ+KHtH92B6dr4LE6qPjK9AYe9XfwDK/xgQSwyCKQwv5Q==
 
-eslint-config-standard@15.0.1:
-  version "15.0.1"
-  resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-15.0.1.tgz#1262eafaba66f4f03fdf3cf655a28aa8b40868b7"
-  integrity sha512-UGorkix49kBium7Y124o2U9Qy7Lpa+nO0FsaqQSIPeno5hGNxZtSBJbqJX6gtpYfDFWCtqCAN9wyK+oDd9jT7Q==
+eslint-config-standard@16.0.1:
+  version "16.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-16.0.1.tgz#9a385eea27f96b7918cb53f07e01e9d10cc56401"
+  integrity sha512-WBBiQQZdaPyL+4sPkGWhWrHCDtvJoU195B9j8yXE9uFQnX34gMXI5CeBRm95gx3PMEZPM5OpwET10hH4F4SxCA==
 
 eslint-import-resolver-node@^0.3.4:
   version "0.3.4"
