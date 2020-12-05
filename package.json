@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@sitaggart/eslint-config-ts": "0.5.232",
-    "@sitaggart/prettier-config": "0.2.27",
+    "@sitaggart/prettier-config": "0.2.28",
     "@types/color": "3.0.1",
     "@types/eslint": "7.2.6",
     "@types/jest": "26.0.16",
