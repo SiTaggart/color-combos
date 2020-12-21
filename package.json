@@ -48,7 +48,7 @@
     "@types/lodash.uniq": "4.5.6",
     "@types/node": "14.14.14",
     "bundlesize": "0.18.0",
-    "eslint": "7.15.0",
+    "eslint": "7.16.0",
     "husky": "4.3.6",
     "jest": "26.6.3",
     "precise-commits": "1.0.2",
