@@ -871,10 +871,10 @@
     eslint-plugin-standard "4.1.0"
     eslint-plugin-unicorn "23.0.0"
 
-"@sitaggart/prettier-config@0.2.49":
-  version "0.2.49"
-  resolved "https://registry.yarnpkg.com/@sitaggart/prettier-config/-/prettier-config-0.2.49.tgz#06f9fb88ca88fdd354aa392c3865d4b20334f0b4"
-  integrity sha512-QzKtgY7DKMQbBn0EDy/RU1AK32GBQ3W8hWjJ0/oQY1BKlS9lQWs97Dzwact+aby7rXBrDcsXf79z/tgBv+3rpQ==
+"@sitaggart/prettier-config@0.2.50":
+  version "0.2.50"
+  resolved "https://registry.yarnpkg.com/@sitaggart/prettier-config/-/prettier-config-0.2.50.tgz#2091fe23177bea7a9134a104bcfa8ab89d085db9"
+  integrity sha512-S04+7FdczJwUy9M3U496ltl15L+ix6QBDO3aPib8ebp5ayuNIknDLBGuGIze7ktGHwPRavEO/hWrmA0IPwehGg==
 
 "@types/babel__core@^7.0.0":
   version "7.1.9"
