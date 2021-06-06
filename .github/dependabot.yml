@@ -1,69 +1,17 @@
 version: 2
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: daily
-    time: "13:00"
-  open-pull-requests-limit: 10
-  ignore:
-  - dependency-name: "@types/node"
-    versions:
-    - 14.14.23
-    - 14.14.26
-    - 14.14.29
-    - 15.0.0
-  - dependency-name: rollup
-    versions:
-    - 2.38.2
-    - 2.38.3
-    - 2.42.1
-  - dependency-name: "@sitaggart/eslint-config-ts"
-    versions:
-    - 0.5.263
-    - 0.5.267
-    - 0.5.269
-    - 0.5.270
-    - 0.5.278
-    - 0.5.279
-    - 0.5.280
-    - 0.5.281
-    - 0.5.282
-    - 0.5.283
-    - 0.5.285
-    - 0.5.286
-    - 0.5.287
-    - 0.5.288
-    - 0.5.289
-    - 0.5.290
-    - 0.5.292
-    - 0.5.293
-    - 0.5.295
-    - 0.5.296
-    - 0.5.297
-    - 0.5.298
-  - dependency-name: "@sitaggart/prettier-config"
-    versions:
-    - 0.2.58
-    - 0.2.62
-    - 0.2.64
-    - 0.2.65
-    - 0.2.66
-    - 0.2.76
-    - 0.2.77
-    - 0.2.78
-    - 0.2.79
-    - 0.2.84
-    - 0.2.85
-    - 0.2.87
-    - 0.2.88
-    - 0.2.90
-    - 0.2.91
-    - 0.2.92
-  - dependency-name: husky
-    versions:
-    - 5.1.2
-  commit-message:
-    prefix: fix
-    prefix-development: chore
-    include: scope
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: weekly
+      time: "13:00"
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: daily
+      time: "13:00"
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: fix
+      prefix-development: chore
+      include: scope
