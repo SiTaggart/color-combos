@@ -17,7 +17,8 @@
     "prettier": "prettier --list-different '**/*.{ts,tsx,js}'",
     "prettier-clean": "prettier --write '**/*.{ts,tsx,js}'",
     "test": "jest",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -74,12 +75,9 @@
       "maxSize": "11 kB"
     }
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "precise-commits"
-    }
-  },
   "release": {
-    "branches": ["main"]
+    "branches": [
+      "main"
+    ]
   }
 }
