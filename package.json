@@ -42,7 +42,7 @@
   "devDependencies": {
     "@sitaggart/eslint-config-ts": "0.5.314",
     "@sitaggart/prettier-config": "0.2.109",
-    "@types/color": "3.0.1",
+    "@types/color": "3.0.2",
     "@types/eslint": "7.2.13",
     "@types/jest": "26.0.23",
     "@types/lodash": "4.14.170",
