@@ -1038,10 +1038,10 @@
     eslint-plugin-react-hooks "4.2.0"
     eslint-plugin-unicorn "35.0.0"
 
-"@sitaggart/prettier-config@0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@sitaggart/prettier-config/-/prettier-config-0.3.0.tgz#07b423cfc9bb6646913b9f45b492ab5f26e653de"
-  integrity sha512-0a77qYB3LOGL0/cZ6fMVu112uqWHciIepcT9Yy2qFNtM8qYqo+q1UuWgFv+7Cd9Zsh9r3GaZWyUQfkA//m+pyA==
+"@sitaggart/prettier-config@0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@sitaggart/prettier-config/-/prettier-config-0.3.1.tgz#0ddd43ce2108b3ce1fe6027916e4b6056be4e090"
+  integrity sha512-rYLWNIL1+lz8ctnAzL2Hq9CJeMl9OH+Wd3oW9gEQb5cBdS3FUjRSho8G6htFFEcktXpfGoHBbms68Zpb5rU7bw==
 
 "@tsconfig/node10@^1.0.7":
   version "1.0.8"
