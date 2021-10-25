@@ -18,7 +18,9 @@
     "prettier-clean": "prettier --write '**/*.{ts,tsx,js}'",
     "test": "jest",
     "semantic-release": "semantic-release",
-    "prepare": "husky install"
+    "postinstall": "husky install",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable"
   },
   "repository": {
     "type": "git",
@@ -52,6 +54,7 @@
     "eslint": "7.32.0",
     "husky": "7.0.4",
     "jest": "26.6.3",
+    "pinst": "^2.1.6",
     "precise-commits": "1.0.2",
     "prettier": "2.4.1",
     "rollup": "2.58.0",
@@ -79,5 +82,6 @@
     "branches": [
       "main"
     ]
-  }
+  },
+  "packageManager": "yarn@3.0.2"
 }
