@@ -1581,10 +1581,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:*, @types/lodash@npm:4.14.170":
+"@types/lodash@npm:*":
   version: 4.14.170
   resolution: "@types/lodash@npm:4.14.170"
   checksum: 238a440804e787b85461cc280a11926c80779f7502fec21a70b4424d5feba4cc34cdcbbbc1dca2ec5e75b06d5dc42e42add798be3b6651e8dce9f4b5318d6022
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:4.14.176":
+  version: 4.14.176
+  resolution: "@types/lodash@npm:4.14.176"
+  checksum: 9e949704dfffab60365b5cdca0477926af6eabe82c64b7be8f74b3a117bb373d58371be962c2b159dd0cf8fad49a7dcacc748564aea4ce6b6883c197a6f0bfa8
   languageName: node
   linkType: hard
 
@@ -1595,10 +1602,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:16.11.3":
+"@types/node@npm:*":
   version: 16.11.3
   resolution: "@types/node@npm:16.11.3"
   checksum: 65682d01d2c10b9658d9b3c160ae72f0b2d626d7d02459434b21a9476518dbab38c852586c160a7a10f7e4271266e11001dd9fa605b4c7a53d3c0c045eaf4a65
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:16.11.6":
+  version: 16.11.6
+  resolution: "@types/node@npm:16.11.6"
+  checksum: 6e19634766ff589d3d2f361c2196b671f8f133cdadc5ad347a621c360d8994b6c4fbccfb2ad9c60c588c593831a96497c9c6b77d2b7e91be723384b94f6368e7
   languageName: node
   linkType: hard
 
@@ -3221,9 +3235,9 @@ __metadata:
     "@types/color": 3.0.2
     "@types/eslint": 7.28.2
     "@types/jest": 27.0.2
-    "@types/lodash": 4.14.170
+    "@types/lodash": 4.14.176
     "@types/lodash.uniq": 4.5.6
-    "@types/node": 16.11.3
+    "@types/node": 16.11.6
     bundlesize: 0.18.1
     color: 4.0.1
     eslint: 7.32.0
@@ -3233,7 +3247,7 @@ __metadata:
     pinst: 2.1.6
     precise-commits: 1.0.2
     prettier: 2.4.1
-    rollup: 2.58.0
+    rollup: 2.58.3
     rollup-plugin-babel: 4.4.0
     rollup-plugin-commonjs: 10.1.0
     rollup-plugin-node-resolve: 5.2.0
@@ -3241,7 +3255,7 @@ __metadata:
     rollup-plugin-typescript2: 0.30.0
     semantic-release: 17.4.7
     ts-jest: 26.5.6
-    ts-node: 10.3.1
+    ts-node: 10.4.0
     typescript: 4.4.4
   languageName: unknown
   linkType: soft
@@ -11009,9 +11023,9 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"rollup@npm:2.58.0":
-  version: 2.58.0
-  resolution: "rollup@npm:2.58.0"
+"rollup@npm:2.58.3":
+  version: 2.58.3
+  resolution: "rollup@npm:2.58.3"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -11019,7 +11033,7 @@ resolve@^2.0.0-next.3:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: a5e5642f2b1e239e3698eeee93b19d905e55e3012c63978cebc71e76c0a4eb2de5cff06a2a80d68bf87fe6869c57647cccc335daba280a5449a9214abdeca247
+  checksum: 20305ac3aea2a62be1728cfd3477419431bad2931532cc136da1904841fa03c318b231027b3a3da077baa0a874c20d72985bf74ed42dad103e88de610eb447a9
   languageName: node
   linkType: hard
 
@@ -12353,9 +12367,9 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"ts-node@npm:10.3.1":
-  version: 10.3.1
-  resolution: "ts-node@npm:10.3.1"
+"ts-node@npm:10.4.0":
+  version: 10.4.0
+  resolution: "ts-node@npm:10.4.0"
   dependencies:
     "@cspotcode/source-map-support": 0.7.0
     "@tsconfig/node10": ^1.0.7
@@ -12385,7 +12399,7 @@ resolve@^2.0.0-next.3:
     ts-node-script: dist/bin-script.js
     ts-node-transpile-only: dist/bin-transpile.js
     ts-script: dist/bin-script-deprecated.js
-  checksum: 27d700ecc973962acf4473f043be571f9a7169cfc2fae8850b26450d88a149eb329b28f01b1a2c1068fa1e8a47cfa447066f89bc481a8f64f9b512230b744efa
+  checksum: 3933ac0a937d33c45e04a6750fcdd3e765eb2897d1da1307cd97ac52af093bcfb632ec0453a75000a65c8b5b7bdb32b1077050a186dcc556e62657cb592e6d49
   languageName: node
   linkType: hard
 
