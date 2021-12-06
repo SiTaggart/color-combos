@@ -1309,9 +1309,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sitaggart/eslint-config-ts@npm:0.6.3":
-  version: 0.6.3
-  resolution: "@sitaggart/eslint-config-ts@npm:0.6.3"
+"@sitaggart/eslint-config-ts@npm:0.6.4":
+  version: 0.6.4
+  resolution: "@sitaggart/eslint-config-ts@npm:0.6.4"
   dependencies:
     "@typescript-eslint/eslint-plugin": 5.4.0
     "@typescript-eslint/parser": 5.4.0
@@ -1323,7 +1323,7 @@ __metadata:
     eslint-plugin-cypress: 2.12.1
     eslint-plugin-eslint-comments: 3.2.0
     eslint-plugin-import: 2.25.3
-    eslint-plugin-jest: 25.2.4
+    eslint-plugin-jest: 25.3.0
     eslint-plugin-jsx-a11y: 6.5.1
     eslint-plugin-node: 11.1.0
     eslint-plugin-prettier: 4.0.0
@@ -1334,16 +1334,16 @@ __metadata:
   peerDependencies:
     eslint: "*"
     prettier: "*"
-  checksum: 0f6a58619f56fa9247a900d46ad067a8427772ee0c53b2037991a55441be1507b150937b17a73fe8672edd5fa4ab35f38cd693447be4a19e30e94db003af408f
+  checksum: c8ec07298f9c0c8de6f38bc8e78958a7427b59457f741317bd3922dc0de59029be0578bdf1927e2ee1a01668489c21767965ec480c22093cc11bf3af0c7cdc39
   languageName: node
   linkType: hard
 
-"@sitaggart/prettier-config@npm:0.3.2":
-  version: 0.3.2
-  resolution: "@sitaggart/prettier-config@npm:0.3.2"
+"@sitaggart/prettier-config@npm:0.3.3":
+  version: 0.3.3
+  resolution: "@sitaggart/prettier-config@npm:0.3.3"
   peerDependencies:
     prettier: "*"
-  checksum: dec593bb47bb38c5e02f1711c35cf7d44edef7e9bbe98ac9eb9a5fcd3e1e9961bd30fac5b2080d4996521f7a9cc595040d0003bad746fdbf42af8952bc9ed3c2
+  checksum: 8200e26062cafbbf279c6327d191318261dedd09b6110954ca2459baa348129057ba3449aa4e7bfa51735004b5870bd76b4370b461d1ca4959349c27603d865e
   languageName: node
   linkType: hard
 
@@ -1626,10 +1626,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:16.11.10":
-  version: 16.11.10
-  resolution: "@types/node@npm:16.11.10"
-  checksum: 9c79419c5c3d92d5825bffa30f3668533f598d8b63a73ea7fc24e47f162bdbed92b0f8e4f4261cc3314b39cee050e303366d2aa154abc95c63a572a110b8c160
+"@types/node@npm:16.11.11":
+  version: 16.11.11
+  resolution: "@types/node@npm:16.11.11"
+  checksum: 1c472bd63f23ca0e4effc96e6e0c693b83b027f613a1f41b6d1bd7791f65ce171a351e0a5c92575cb59e84ad0a930875397bfbbb91a7c925ddbbb558f7461af8
   languageName: node
   linkType: hard
 
@@ -3217,24 +3217,24 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "color-combos@workspace:."
   dependencies:
-    "@sitaggart/eslint-config-ts": 0.6.3
-    "@sitaggart/prettier-config": 0.3.2
+    "@sitaggart/eslint-config-ts": 0.6.4
+    "@sitaggart/prettier-config": 0.3.3
     "@types/color": 3.0.2
     "@types/eslint": 7.29.0
     "@types/jest": 27.0.3
     "@types/lodash": 4.14.177
     "@types/lodash.uniq": 4.5.6
-    "@types/node": 16.11.10
+    "@types/node": 16.11.11
     bundlesize: 0.18.1
-    color: 4.0.2
+    color: 4.1.0
     eslint: 7.32.0
     husky: 7.0.4
     jest: 26.6.3
     lodash.uniq: 4.5.0
     pinst: 2.1.6
     precise-commits: 1.0.2
-    prettier: 2.5.0
-    rollup: 2.60.1
+    prettier: 2.5.1
+    rollup: 2.60.2
     rollup-plugin-babel: 4.4.0
     rollup-plugin-commonjs: 10.1.0
     rollup-plugin-node-resolve: 5.2.0
@@ -3279,23 +3279,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"color-string@npm:^1.7.4":
-  version: 1.7.4
-  resolution: "color-string@npm:1.7.4"
+"color-string@npm:^1.9.0":
+  version: 1.9.0
+  resolution: "color-string@npm:1.9.0"
   dependencies:
     color-name: ^1.0.0
     simple-swizzle: ^0.2.2
-  checksum: 7fd872f0105b574c1a931c2cda63a89192eb8740edadbc6a519494f2152ebc3ecea629deeab7b849c4d72942b66355f027d143ea7ac59dc58be2d8a99c6ccee9
+  checksum: 93c6678b847f8cfa47d19677fd19e1d4b19d7a33f100644400357c298266080b5bca64e5f874fa8ac8cc0aa0606ad44f7a838b4e6fd05e6affea190a68555bb4
   languageName: node
   linkType: hard
 
-"color@npm:4.0.2":
-  version: 4.0.2
-  resolution: "color@npm:4.0.2"
+"color@npm:4.1.0":
+  version: 4.1.0
+  resolution: "color@npm:4.1.0"
   dependencies:
     color-convert: ^2.0.1
-    color-string: ^1.7.4
-  checksum: 67af1b4ecccd2f6e409c6f98f353eacda027dbbc65b60259f89c09519e9706eba4a5f0ea2a5e100a6555821a52e65880307eee9f641bbf91992bd634f37bf86d
+    color-string: ^1.9.0
+  checksum: 9f2ca574f8453983ab549282962ccdb094d8b5d29de2d162f2bca81c0c82429d1dfac49d8dabf2c0c0369bb7ceae16ceabc9f523f9eaedcba38a464e72091458
   languageName: node
   linkType: hard
 
@@ -4538,9 +4538,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jest@npm:25.2.4":
-  version: 25.2.4
-  resolution: "eslint-plugin-jest@npm:25.2.4"
+"eslint-plugin-jest@npm:25.3.0":
+  version: 25.3.0
+  resolution: "eslint-plugin-jest@npm:25.3.0"
   dependencies:
     "@typescript-eslint/experimental-utils": ^5.0.0
   peerDependencies:
@@ -4551,7 +4551,7 @@ __metadata:
       optional: true
     jest:
       optional: true
-  checksum: d263c5564e5ce573759fa06b94011855780e79b0407888a5ac0e80303af2aa249d9d089bcd2f0fc108eb58ef6f367544217b1be2b561216e92fc830e9a924a63
+  checksum: d801c166f528392fbb0234e34b893e97c24a7be049744f2d23b1702bce6202d5f0760886a591f884ffa82c7e01a2b06134e86da991bfa568ca5a90311e5f452e
   languageName: node
   linkType: hard
 
@@ -10296,12 +10296,12 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.5.0":
-  version: 2.5.0
-  resolution: "prettier@npm:2.5.0"
+"prettier@npm:2.5.1":
+  version: 2.5.1
+  resolution: "prettier@npm:2.5.1"
   bin:
     prettier: bin-prettier.js
-  checksum: aad1b35b73e7c14596d389d90977a83dad0db689ba5802a0ef319c357b7867f55b885db197972aa6a56c30f53088c9f8e0d7f7930ae074c275a4e9cbe091d21d
+  checksum: 21b9408476ea1c544b0e45d51ceb94a84789ff92095abb710942d780c862d0daebdb29972d47f6b4d0f7ebbfb0ffbf56cc2cfa3e3e9d1cca54864af185b15b66
   languageName: node
   linkType: hard
 
@@ -11186,9 +11186,9 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"rollup@npm:2.60.1":
-  version: 2.60.1
-  resolution: "rollup@npm:2.60.1"
+"rollup@npm:2.60.2":
+  version: 2.60.2
+  resolution: "rollup@npm:2.60.2"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -11196,7 +11196,7 @@ resolve@^2.0.0-next.3:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: 77d7980bd5e619075c7cc67ccbe63263c4e98bd4cc41d4d77d5d4b743cb954adc81d348e38049546645651e2d0e73feeafdcac4474bd8ea333bf5cb882f0bc0c
+  checksum: bcd41dfe8afb7e0d97ce2237752165bdda689bcce6321d96821d565de3e0c865a49b544923f315985be2bfde086f72b54aae4ae7c87f798b3cb9558a5bec4e65
   languageName: node
   linkType: hard
 
