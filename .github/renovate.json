@@ -4,6 +4,5 @@
     ":pinVersions",
     "group:allNonMajor",
     "schedule:earlyMondays"
-  ],
-  "rebaseWhen": "never"
+  ]
 }
