@@ -1,18 +1,26 @@
+queue_rules:
+  - name: default
+    conditions:
+      - -draft # not a draft
+      - base=main
+
 pull_request_rules:
   - name: automatic merge for Dependabot pull requests
     conditions:
-      - author~=^dependabot(|-preview)\[bot\]$
+      - author=renovate[bot]
     actions:
-      merge:
-        method: squash
-        strict: smart
-        strict_method: rebase
+      queue:
+        name: default
+        method: rebase
+        rebase_fallback: squash
+        update_method: rebase
   - name: automatic merge for main when labelled ready to merge
     conditions:
       - base=main
       - label=ready-to-merge
     actions:
-      merge:
-        method: squash
-        strict: smart
-        strict_method: rebase
+      queue:
+        name: default
+        method: rebase
+        rebase_fallback: squash
+        update_method: rebase
