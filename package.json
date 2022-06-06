@@ -46,7 +46,7 @@
     "@sitaggart/prettier-config": "0.3.11",
     "@types/color": "3.0.3",
     "@types/eslint": "8.4.2",
-    "@types/jest": "27.5.2",
+    "@types/jest": "28.1.1",
     "@types/lodash": "4.14.182",
     "@types/lodash.uniq": "4.5.7",
     "@types/node": "16.11.38",
