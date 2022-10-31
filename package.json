@@ -49,7 +49,7 @@
     "@types/jest": "29.2.0",
     "@types/lodash": "4.14.186",
     "@types/lodash.uniq": "4.5.7",
-    "@types/node": "16.18.3",
+    "@types/node": "18.11.8",
     "bundlesize": "0.18.1",
     "eslint": "8.26.0",
     "husky": "8.0.1",
