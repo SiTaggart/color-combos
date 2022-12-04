@@ -1,11 +1,15 @@
 {
   "name": "color-combos",
-  "version": "0.0.0-development",
+  "version": "1.1.0",
   "description": "Get accessibility information about colour combinations",
   "entry": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "yarn clean && yarn compile",
     "build:dev": "yarn clean && yarn compile:dev",
@@ -31,7 +35,7 @@
     "color",
     "a11y"
   ],
-  "author": "Simon Taggart",
+  "author": "sitaggart",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/SiTaggart/color-combos/issues"
@@ -63,6 +67,9 @@
     "ts-node": "10.9.1",
     "tsup": "6.5.0",
     "typescript": "4.9.3"
+  },
+  "resolutions": {
+    "npm/chalk": "^4.1.2"
   },
   "jest": {
     "preset": "ts-jest",
