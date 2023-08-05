@@ -64,7 +64,6 @@
     "emitDecoratorMetadata": true /* Enables experimental support for emitting type metadata for decorators. */,
 
     /* extras */
-    "suppressImplicitAnyIndexErrors": true,
     "newLine": "lf",
     "noErrorTruncation": true,
     "noLib": false,
