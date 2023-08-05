@@ -66,18 +66,7 @@ const ColorCombos = (
 
   const combinedOptions = Object.assign<Options, Options>(DEFAULT_OPTIONS, options);
 
-  if (!Array.isArray(colors)) {
-    if (typeof colors === 'object') {
-      arr = Object.keys(colors).map((key) => Color(colors[key]) as unknown as ComboColor);
-
-      if (combinedOptions.uniq) {
-        arr = uniq(arr);
-      }
-    } else {
-      console.error('Must provide an array or object');
-      return false;
-    }
-  } else {
+  if (Array.isArray(colors)) {
     let uniqueColors = colors;
     if (combinedOptions.uniq) {
       uniqueColors = uniq(colors);
@@ -86,6 +75,15 @@ const ColorCombos = (
     if (uniqueColors !== undefined) {
       arr = uniqueColors.map((color) => Color(color) as unknown as ComboColor);
     }
+  } else if (typeof colors === 'object') {
+    arr = Object.keys(colors).map((key) => Color(colors[key]) as unknown as ComboColor);
+
+    if (combinedOptions.uniq) {
+      arr = uniq(arr);
+    }
+  } else {
+    console.error('Must provide an array or object');
+    return false;
   }
 
   results = arr.map((color): ColorCombo => {

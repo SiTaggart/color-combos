@@ -6,6 +6,9 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "engines": {
+    "node": "16.x"
+  },
   "files": [
     "dist",
     "README.md"
@@ -46,27 +49,28 @@
     "lodash.uniq": "4.5.0"
   },
   "devDependencies": {
-    "@sitaggart/eslint-config-ts": "0.6.25",
-    "@sitaggart/prettier-config": "0.3.24",
-    "@swc/core": "1.3.37",
+    "@sitaggart/eslint-config-ts": "0.7.0",
+    "@sitaggart/prettier-config": "0.3.25",
+    "@swc/core": "1.3.74",
     "@types/color": "3.0.3",
-    "@types/eslint": "8.21.1",
-    "@types/jest": "29.4.0",
-    "@types/lodash": "4.14.191",
+    "@types/eslint": "8.44.2",
+    "@types/jest": "29.5.3",
+    "@types/lodash": "4.14.196",
     "@types/lodash.uniq": "4.5.7",
-    "@types/node": "18.14.6",
+    "@types/node": "20.4.8",
     "bundlesize": "0.18.1",
-    "eslint": "8.35.0",
-    "husky": "8.0.3",
+    "eslint": "8.46.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "husky": "latest",
     "jest": "29.4.3",
     "pinst": "3.0.0",
     "precise-commits": "1.0.2",
-    "prettier": "2.8.4",
-    "semantic-release": "20.1.1",
-    "ts-jest": "29.0.5",
+    "prettier": "2.8.8",
+    "semantic-release": "21.0.7",
+    "ts-jest": "29.1.1",
     "ts-node": "10.9.1",
-    "tsup": "6.6.3",
-    "typescript": "4.9.5"
+    "tsup": "7.2.0",
+    "typescript": "5.1.6"
   },
   "resolutions": {
     "npm/chalk": "5.2.0"
@@ -86,5 +90,5 @@
       "main"
     ]
   },
-  "packageManager": "yarn@3.4.1"
+  "packageManager": "yarn@3.6.1"
 }
