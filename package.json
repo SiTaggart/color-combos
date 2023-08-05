@@ -60,6 +60,7 @@
     "@types/node": "20.4.8",
     "bundlesize": "0.18.1",
     "eslint": "8.46.0",
+    "eslint-plugin-prettier": "4.2.1",
     "husky": "latest",
     "jest": "29.4.3",
     "pinst": "3.0.0",
