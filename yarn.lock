@@ -2292,22 +2292,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/color@npm:3.0.5":
-  version: 3.0.5
-  resolution: "@types/color@npm:3.0.5"
+"@types/color@npm:3.0.6":
+  version: 3.0.6
+  resolution: "@types/color@npm:3.0.6"
   dependencies:
     "@types/color-convert": "*"
-  checksum: 82cce7cb132b5c0898dd69b92a4663e34ad8f19db6a009bef7ef79d4840ddb4d5f7e793e2e64e3b4a60da92dc2ae33d1aa498981d0fcf0562917c9550603a99d
+  checksum: 0f16dcf4e202896d5425019c44a1f99713fca998052ab2fd836cdd38048398a0caf5b79a2efe560e41fca4b9401e8d8f6f02ed541cfea30cca3a8cb1b50b80f7
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:8.44.6":
-  version: 8.44.6
-  resolution: "@types/eslint@npm:8.44.6"
+"@types/eslint@npm:8.44.7":
+  version: 8.44.7
+  resolution: "@types/eslint@npm:8.44.7"
   dependencies:
     "@types/estree": "*"
     "@types/json-schema": "*"
-  checksum: ed8de582ab3dbd7ec0bf97d41f4f3de28dd8a37fc48bc423e1c406bbb70d1fd8c4175ba17ad6495ef9ef99a43df71421277b7a2a0355097489c4c4cf6bb266ff
+  checksum: 72a52f74477fbe7cc95ad290b491f51f0bc547cb7ea3672c68da3ffd3fb21ba86145bc36823a37d0a186caedeaee15b2d2a6b4c02c6c55819ff746053bd28310
   languageName: node
   linkType: hard
 
@@ -2352,13 +2352,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:29.5.7":
-  version: 29.5.7
-  resolution: "@types/jest@npm:29.5.7"
+"@types/jest@npm:29.5.8":
+  version: 29.5.8
+  resolution: "@types/jest@npm:29.5.8"
   dependencies:
     expect: ^29.0.0
     pretty-format: ^29.0.0
-  checksum: e28624ccb0ef1255a03fbbb4b5bc3e5cbcdc450d39e0739985ff679b124198f808c38c8c3e67859c6efc0e848196deeb8cfed028e12a821c511dfc1112a2d6e9
+  checksum: ca8438a5b4c098c8c023e9d5b279ea306494a1d0b5291cfb498100fa780377145f068b2a021d545b0398bbe0328dcc37044dd3aaf3c6c0fe9b0bef7b46a63453
   languageName: node
   linkType: hard
 
@@ -2390,12 +2390,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash.uniq@npm:4.5.8":
-  version: 4.5.8
-  resolution: "@types/lodash.uniq@npm:4.5.8"
+"@types/lodash.uniq@npm:4.5.9":
+  version: 4.5.9
+  resolution: "@types/lodash.uniq@npm:4.5.9"
   dependencies:
     "@types/lodash": "*"
-  checksum: f9b5e4116501648caafbeaa6b016b79d450fc2d8597e5a2a9db1e5bb65c22745b6f9ce683419c5f83534dab9caf2e9542bb37e2e680e818198f478d8fe9b6b85
+  checksum: 60f125db84fc73aa07c1b435f9df773ebf16124c9506eec3e7f61b2cfc67da037a55d7f38a6eb7ed05391b8d93a44b17b01ef7c95e5ee3f17e1dc6bf7f3b731e
   languageName: node
   linkType: hard
 
@@ -2406,10 +2406,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:4.14.200":
-  version: 4.14.200
-  resolution: "@types/lodash@npm:4.14.200"
-  checksum: 6471f8bb5da692a6ecf03a8da4935bfbc341e67ee9bcb4f5730bfacff0c367232548f0a01e8ac5ea18c6fe78fb085d502494e33ccb47a7ee87cbdee03b47d00d
+"@types/lodash@npm:4.14.201":
+  version: 4.14.201
+  resolution: "@types/lodash@npm:4.14.201"
+  checksum: 484be655298e9b2dc2d218ea934071b2ea31e4a531c561dd220dbda65237e8d08c20dc2d457ac24f29be7fe167415bf7bb9360ea0d80bdb8b0f0ec8d8db92fae
   languageName: node
   linkType: hard
 
@@ -2420,12 +2420,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.8.10":
-  version: 20.8.10
-  resolution: "@types/node@npm:20.8.10"
+"@types/node@npm:20.9.0":
+  version: 20.9.0
+  resolution: "@types/node@npm:20.9.0"
   dependencies:
     undici-types: ~5.26.4
-  checksum: 7c61190e43e8074a1b571e52ff14c880bc67a0447f2fe5ed0e1a023eb8a23d5f815658edb98890f7578afe0f090433c4a635c7c87311762544e20dd78723e515
+  checksum: bfd927da6bff8a32051fa44bb47ca32a56d2c8bc8ba0170770f181cc1fa3c0b05863c9b930f0ba8604a48d5eb0d319166601709ca53bf2deae0025d8b6c6b8a3
   languageName: node
   linkType: hard
 
@@ -3949,12 +3949,12 @@ __metadata:
     "@sitaggart/eslint-config-ts": 0.7.0
     "@sitaggart/prettier-config": 0.3.25
     "@swc/core": 1.3.96
-    "@types/color": 3.0.5
-    "@types/eslint": 8.44.6
-    "@types/jest": 29.5.7
-    "@types/lodash": 4.14.200
-    "@types/lodash.uniq": 4.5.8
-    "@types/node": 20.8.10
+    "@types/color": 3.0.6
+    "@types/eslint": 8.44.7
+    "@types/jest": 29.5.8
+    "@types/lodash": 4.14.201
+    "@types/lodash.uniq": 4.5.9
+    "@types/node": 20.9.0
     bundlesize: 0.18.1
     color: 4.2.3
     eslint: 8.53.0
