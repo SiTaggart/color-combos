@@ -2130,90 +2130,90 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-arm64@npm:1.3.102":
-  version: 1.3.102
-  resolution: "@swc/core-darwin-arm64@npm:1.3.102"
+"@swc/core-darwin-arm64@npm:1.3.103":
+  version: 1.3.103
+  resolution: "@swc/core-darwin-arm64@npm:1.3.103"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-x64@npm:1.3.102":
-  version: 1.3.102
-  resolution: "@swc/core-darwin-x64@npm:1.3.102"
+"@swc/core-darwin-x64@npm:1.3.103":
+  version: 1.3.103
+  resolution: "@swc/core-darwin-x64@npm:1.3.103"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm-gnueabihf@npm:1.3.102":
-  version: 1.3.102
-  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.3.102"
+"@swc/core-linux-arm-gnueabihf@npm:1.3.103":
+  version: 1.3.103
+  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.3.103"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-gnu@npm:1.3.102":
-  version: 1.3.102
-  resolution: "@swc/core-linux-arm64-gnu@npm:1.3.102"
+"@swc/core-linux-arm64-gnu@npm:1.3.103":
+  version: 1.3.103
+  resolution: "@swc/core-linux-arm64-gnu@npm:1.3.103"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-musl@npm:1.3.102":
-  version: 1.3.102
-  resolution: "@swc/core-linux-arm64-musl@npm:1.3.102"
+"@swc/core-linux-arm64-musl@npm:1.3.103":
+  version: 1.3.103
+  resolution: "@swc/core-linux-arm64-musl@npm:1.3.103"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-gnu@npm:1.3.102":
-  version: 1.3.102
-  resolution: "@swc/core-linux-x64-gnu@npm:1.3.102"
+"@swc/core-linux-x64-gnu@npm:1.3.103":
+  version: 1.3.103
+  resolution: "@swc/core-linux-x64-gnu@npm:1.3.103"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-musl@npm:1.3.102":
-  version: 1.3.102
-  resolution: "@swc/core-linux-x64-musl@npm:1.3.102"
+"@swc/core-linux-x64-musl@npm:1.3.103":
+  version: 1.3.103
+  resolution: "@swc/core-linux-x64-musl@npm:1.3.103"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@swc/core-win32-arm64-msvc@npm:1.3.102":
-  version: 1.3.102
-  resolution: "@swc/core-win32-arm64-msvc@npm:1.3.102"
+"@swc/core-win32-arm64-msvc@npm:1.3.103":
+  version: 1.3.103
+  resolution: "@swc/core-win32-arm64-msvc@npm:1.3.103"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-win32-ia32-msvc@npm:1.3.102":
-  version: 1.3.102
-  resolution: "@swc/core-win32-ia32-msvc@npm:1.3.102"
+"@swc/core-win32-ia32-msvc@npm:1.3.103":
+  version: 1.3.103
+  resolution: "@swc/core-win32-ia32-msvc@npm:1.3.103"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@swc/core-win32-x64-msvc@npm:1.3.102":
-  version: 1.3.102
-  resolution: "@swc/core-win32-x64-msvc@npm:1.3.102"
+"@swc/core-win32-x64-msvc@npm:1.3.103":
+  version: 1.3.103
+  resolution: "@swc/core-win32-x64-msvc@npm:1.3.103"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core@npm:1.3.102":
-  version: 1.3.102
-  resolution: "@swc/core@npm:1.3.102"
+"@swc/core@npm:1.3.103":
+  version: 1.3.103
+  resolution: "@swc/core@npm:1.3.103"
   dependencies:
-    "@swc/core-darwin-arm64": 1.3.102
-    "@swc/core-darwin-x64": 1.3.102
-    "@swc/core-linux-arm-gnueabihf": 1.3.102
-    "@swc/core-linux-arm64-gnu": 1.3.102
-    "@swc/core-linux-arm64-musl": 1.3.102
-    "@swc/core-linux-x64-gnu": 1.3.102
-    "@swc/core-linux-x64-musl": 1.3.102
-    "@swc/core-win32-arm64-msvc": 1.3.102
-    "@swc/core-win32-ia32-msvc": 1.3.102
-    "@swc/core-win32-x64-msvc": 1.3.102
+    "@swc/core-darwin-arm64": 1.3.103
+    "@swc/core-darwin-x64": 1.3.103
+    "@swc/core-linux-arm-gnueabihf": 1.3.103
+    "@swc/core-linux-arm64-gnu": 1.3.103
+    "@swc/core-linux-arm64-musl": 1.3.103
+    "@swc/core-linux-x64-gnu": 1.3.103
+    "@swc/core-linux-x64-musl": 1.3.103
+    "@swc/core-win32-arm64-msvc": 1.3.103
+    "@swc/core-win32-ia32-msvc": 1.3.103
+    "@swc/core-win32-x64-msvc": 1.3.103
     "@swc/counter": ^0.1.1
     "@swc/types": ^0.1.5
   peerDependencies:
@@ -2242,7 +2242,7 @@ __metadata:
   peerDependenciesMeta:
     "@swc/helpers":
       optional: true
-  checksum: 45c0edb06f87a811e28fb3ed587fbe6b7ca67ff2440fe15666d43729788903a4af61e3b57842aecc0b2b70e3c9981b698d8233746ba94dfb5a19e1c62eea33ad
+  checksum: cff453fd8f186bcd12c8a2f727dcc578a75382b7ca851054021f625ab940ad5463073d90c8dd13a0f4e1577defa4de039d59da280dce88a6b582d15f46edeed8
   languageName: node
   linkType: hard
 
@@ -2385,13 +2385,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:8.56.1":
-  version: 8.56.1
-  resolution: "@types/eslint@npm:8.56.1"
+"@types/eslint@npm:8.56.2":
+  version: 8.56.2
+  resolution: "@types/eslint@npm:8.56.2"
   dependencies:
     "@types/estree": "*"
     "@types/json-schema": "*"
-  checksum: 1a4c7334c2f0cfead7b9d25c574c7b3d0b44242958703caa868ed38990a96b5d96477e6fceb7be54fbadd6fb61c97b778b9df58531ced3ec4b022d3e54254dc3
+  checksum: 38e054971596f5c0413f66a62dc26b10e0a21ac46ceacb06fbf8cfb838d20820787209b17218b3916e4c23d990ff77cfdb482d655cac0e0d2b837d430fcc5db8
   languageName: node
   linkType: hard
 
@@ -2504,12 +2504,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.10.7":
-  version: 20.10.7
-  resolution: "@types/node@npm:20.10.7"
+"@types/node@npm:20.11.1":
+  version: 20.11.1
+  resolution: "@types/node@npm:20.11.1"
   dependencies:
     undici-types: ~5.26.4
-  checksum: 86f4f96f5169538f47bbd652ab8e3712cd307701481ff3e9ce0c1ea7d8424a38b5ac4a1d33088cdd9ea1bfe68fd27bbae005a21969aa6d9a36295904da6f09f2
+  checksum: d50670a5357968b9ff5214c807f688cb639054eb3d602741e4a381febe3b39624750ee0ea5817e33e3a9f88479cce6d3baf084c0412c614d48e7074d17b8a0de
   languageName: node
   linkType: hard
 
@@ -4032,13 +4032,13 @@ __metadata:
   dependencies:
     "@sitaggart/eslint-config-ts": 0.7.0
     "@sitaggart/prettier-config": 0.3.25
-    "@swc/core": 1.3.102
+    "@swc/core": 1.3.103
     "@types/color": 3.0.6
-    "@types/eslint": 8.56.1
+    "@types/eslint": 8.56.2
     "@types/jest": 29.5.11
     "@types/lodash": 4.14.202
     "@types/lodash.uniq": 4.5.9
-    "@types/node": 20.10.7
+    "@types/node": 20.11.1
     bundlesize: 0.18.1
     color: 4.2.3
     eslint: 8.56.0
