@@ -59,7 +59,7 @@
     "@types/lodash.uniq": "4.5.9",
     "@types/node": "20.12.8",
     "bundlesize": "0.18.2",
-    "eslint": "8.57.0",
+    "eslint": "9.2.0",
     "eslint-plugin-prettier": "4.2.1",
     "husky": "latest",
     "jest": "29.7.0",
