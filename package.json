@@ -55,9 +55,9 @@
     "@types/color": "3.0.6",
     "@types/eslint": "8.56.10",
     "@types/jest": "29.5.12",
-    "@types/lodash": "4.17.0",
+    "@types/lodash": "4.17.1",
     "@types/lodash.uniq": "4.5.9",
-    "@types/node": "20.12.7",
+    "@types/node": "20.12.8",
     "bundlesize": "0.18.2",
     "eslint": "8.57.0",
     "eslint-plugin-prettier": "4.2.1",
@@ -90,5 +90,5 @@
       "main"
     ]
   },
-  "packageManager": "yarn@3.8.1"
+  "packageManager": "yarn@3.8.2"
 }

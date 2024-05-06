@@ -2490,10 +2490,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:4.17.0":
-  version: 4.17.0
-  resolution: "@types/lodash@npm:4.17.0"
-  checksum: 3f98c0b67a93994cbc3403d4fa9dbaf52b0b6bb7f07a764d73875c2dcd5ef91222621bd5bcf8eee7b417a74d175c2f7191b9f595f8603956fd06f0674c0cba93
+"@types/lodash@npm:4.17.1":
+  version: 4.17.1
+  resolution: "@types/lodash@npm:4.17.1"
+  checksum: 01984d5b44c09ef45258f8ac6d0cf926900624064722d51a020ba179e5d4a293da0068fb278d87dc695586afe7ebd3362ec57f5c0e7c4f6c1fab9d04a80e77f5
   languageName: node
   linkType: hard
 
@@ -2504,12 +2504,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.12.7":
-  version: 20.12.7
-  resolution: "@types/node@npm:20.12.7"
+"@types/node@npm:20.12.8":
+  version: 20.12.8
+  resolution: "@types/node@npm:20.12.8"
   dependencies:
     undici-types: ~5.26.4
-  checksum: 7cc979f7e2ca9a339ec71318c3901b9978555257929ef3666987f3e447123bc6dc92afcc89f6347e09e07d602fde7d51bcddea626c23aa2bb74aeaacfd1e1686
+  checksum: 84d4876d95792a9567d2cc5a2c48db7028c397820e842cd65e2f848c23dd4b868b7131bda8eb66a1729d4944289070153d6180048de5bd155b35de421283c433
   languageName: node
   linkType: hard
 
@@ -4056,9 +4056,9 @@ __metadata:
     "@types/color": 3.0.6
     "@types/eslint": 8.56.10
     "@types/jest": 29.5.12
-    "@types/lodash": 4.17.0
+    "@types/lodash": 4.17.1
     "@types/lodash.uniq": 4.5.9
-    "@types/node": 20.12.7
+    "@types/node": 20.12.8
     bundlesize: 0.18.2
     color: 4.2.3
     eslint: 8.57.0
