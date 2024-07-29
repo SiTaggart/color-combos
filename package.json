@@ -7,7 +7,7 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "engines": {
-    "node": "20.15.1"
+    "node": "20.16.0"
   },
   "files": [
     "dist",
@@ -51,13 +51,13 @@
   "devDependencies": {
     "@sitaggart/eslint-config-ts": "0.7.0",
     "@sitaggart/prettier-config": "0.3.25",
-    "@swc/core": "1.7.0",
+    "@swc/core": "1.7.3",
     "@types/color": "3.0.6",
-    "@types/eslint": "8.56.10",
+    "@types/eslint": "8.56.11",
     "@types/jest": "29.5.12",
     "@types/lodash": "4.17.7",
     "@types/lodash.uniq": "4.5.9",
-    "@types/node": "20.14.11",
+    "@types/node": "20.14.13",
     "bundlesize": "0.18.2",
     "eslint": "8.57.0",
     "eslint-plugin-prettier": "4.2.1",
@@ -69,8 +69,8 @@
     "semantic-release": "22.0.12",
     "ts-jest": "29.2.3",
     "ts-node": "10.9.2",
-    "tsup": "8.2.1",
-    "typescript": "5.5.3"
+    "tsup": "8.2.3",
+    "typescript": "5.5.4"
   },
   "resolutions": {
     "npm/chalk": "5.3.0"
