@@ -7,7 +7,7 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "engines": {
-    "node": "20.17.0"
+    "node": "20.18.0"
   },
   "files": [
     "dist",
@@ -55,7 +55,7 @@
     "@types/color": "3.0.6",
     "@types/eslint": "8.56.12",
     "@types/jest": "29.5.13",
-    "@types/lodash": "4.17.9",
+    "@types/lodash": "4.17.10",
     "@types/lodash.uniq": "4.5.9",
     "@types/node": "20.16.10",
     "bundlesize": "0.18.2",
