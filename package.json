@@ -51,7 +51,7 @@
   "devDependencies": {
     "@sitaggart/eslint-config-ts": "0.7.0",
     "@sitaggart/prettier-config": "0.3.25",
-    "@swc/core": "1.9.3",
+    "@swc/core": "1.10.0",
     "@types/color": "3.0.6",
     "@types/eslint": "8.56.12",
     "@types/jest": "29.5.14",
@@ -90,5 +90,5 @@
       "main"
     ]
   },
-  "packageManager": "yarn@3.8.6"
+  "packageManager": "yarn@3.8.7"
 }
