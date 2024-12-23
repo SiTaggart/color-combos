@@ -73,7 +73,7 @@
     "typescript": "5.7.2"
   },
   "resolutions": {
-    "npm/chalk": "5.3.0"
+    "npm/chalk": "5.4.1"
   },
   "jest": {
     "preset": "ts-jest",
