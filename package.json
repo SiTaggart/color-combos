@@ -7,7 +7,7 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "engines": {
-    "node": "20.18.3"
+    "node": "22.14.0"
   },
   "files": [
     "dist",
@@ -57,7 +57,7 @@
     "@types/jest": "29.5.14",
     "@types/lodash": "4.17.16",
     "@types/lodash.uniq": "4.5.9",
-    "@types/node": "20.17.22",
+    "@types/node": "22.13.9",
     "bundlesize": "0.18.2",
     "eslint": "8.57.1",
     "eslint-plugin-prettier": "4.2.1",
