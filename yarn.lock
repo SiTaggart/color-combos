@@ -2625,12 +2625,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.17.27":
-  version: 20.17.27
-  resolution: "@types/node@npm:20.17.27"
+"@types/node@npm:22.13.14":
+  version: 22.13.14
+  resolution: "@types/node@npm:22.13.14"
   dependencies:
-    undici-types: ~6.19.2
-  checksum: cf67d62af4301791a4a1352858e5a2f163055d36d54a5447f0ea980b408c99caaabce0964b3bad7f0cc271ee79c46660a0c31979dc3050447bf9e00cf00f57b5
+    undici-types: ~6.20.0
+  checksum: 8c5a3c1ec085bc320d6b19915406920e41bc482aed24098bf9858957ace22b762b50594a2805766b2d09966ea457dfad847b51a2d10dd4c1931955f80de598ce
   languageName: node
   linkType: hard
 
@@ -4183,7 +4183,7 @@ __metadata:
     "@types/jest": 29.5.14
     "@types/lodash": 4.17.16
     "@types/lodash.uniq": 4.5.9
-    "@types/node": 20.17.27
+    "@types/node": 22.13.14
     bundlesize: 0.18.2
     color: 4.2.3
     eslint: 8.57.1
@@ -12753,10 +12753,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici-types@npm:~6.19.2":
-  version: 6.19.6
-  resolution: "undici-types@npm:6.19.6"
-  checksum: e66df2447b6d93a48b0605a54269d8c3f228edcd1e9563229f6de37e48ed53b3e49b4bc965733643ed9717e0e0fa1ee664c929db91d787c9f488fb3f9e17c533
+"undici-types@npm:~6.20.0":
+  version: 6.20.0
+  resolution: "undici-types@npm:6.20.0"
+  checksum: b7bc50f012dc6afbcce56c9fd62d7e86b20a62ff21f12b7b5cbf1973b9578d90f22a9c7fe50e638e96905d33893bf2f9f16d98929c4673c2480de05c6c96ea8b
   languageName: node
   linkType: hard
 
