@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'bun:test';
 import ColorCombos from '..';
 
 describe('ColorCombos', (): void => {
@@ -106,7 +107,6 @@ describe('ColorCombos', (): void => {
   });
 
   it('should return return false if not passed an array or object', (): void => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     expect(ColorCombos('#ddd')).toEqual(false);
   });

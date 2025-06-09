@@ -1,4 +1,9 @@
 {
+  "biome.enabled": true,
   "editor.formatOnSave": true,
-  "jest.jestCommandLine": "yarn test"
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
+  },
+  "editor.defaultFormatter": "biomejs.biome",
 }

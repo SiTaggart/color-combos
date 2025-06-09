@@ -3,31 +3,48 @@
   "version": "1.1.0",
   "description": "Get accessibility information about colour combinations",
   "entry": "src/index.ts",
+  "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
   "engines": {
-    "node": "20.19.2"
+    "node": ">=22.0.0",
+    "bun": ">=1.0.0"
   },
   "files": [
     "dist",
     "README.md"
   ],
   "scripts": {
-    "build": "yarn clean && yarn compile",
-    "build:dev": "yarn clean && yarn compile:dev",
+    "build": "bun run clean && bun run compile && bun run compile:types",
+    "build:dev": "bun run clean && bun run compile:dev",
     "bundlesize": "bundlesize",
     "clean": "rm -rf ./dist",
-    "compile": "yarn tsup src/index.ts --dts --format esm,cjs --env.NODE_ENV production",
-    "compile:dev": "yarn tsup src/index.ts --dts --format esm,cjs --env.NODE_ENV development",
-    "eslint": "eslint --ext .tsx,.ts,.js ./src",
-    "prettier": "prettier --list-different '**/*.{ts,tsx,js}'",
-    "prettier-clean": "prettier --write '**/*.{ts,tsx,js}'",
-    "test": "jest",
+    "compile": "NODE_ENV=production bun run build.ts",
+    "compile:dev": "NODE_ENV=development bun run build.ts",
+    "compile:types": "mkdir -p dist && bunx tsc src/index.ts --declaration --declarationMap --emitDeclarationOnly --outDir dist --esModuleInterop",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format .",
+    "format:fix": "biome format --write .",
+    "test": "bun test src",
+    "test:integration": "bun test _test_/integration",
+    "test:all": "bun run test && bun run build && bun run test:integration",
     "semantic-release": "semantic-release",
-    "postinstall": "husky install",
-    "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable"
+    "size": "bun run build && size-limit",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -36,8 +53,13 @@
   "keywords": [
     "accessibility",
     "color",
-    "a11y"
+    "a11y",
+    "wcag",
+    "contrast",
+    "typescript",
+    "esm"
   ],
+  "sideEffects": false,
   "author": "sitaggart",
   "license": "MIT",
   "bugs": {
@@ -49,46 +71,34 @@
     "lodash.uniq": "4.5.0"
   },
   "devDependencies": {
-    "@sitaggart/eslint-config-ts": "0.7.0",
-    "@sitaggart/prettier-config": "0.3.25",
-    "@swc/core": "1.11.31",
+    "@biomejs/biome": "2.0.0-beta.6",
+    "@sitaggart/lint-config": "^1.0.1",
+    "@size-limit/preset-big-lib": "^11.2.0",
+    "@types/bun": "^1.2.15",
     "@types/color": "3.0.6",
-    "@types/eslint": "8.56.12",
-    "@types/jest": "29.5.14",
     "@types/lodash": "4.17.17",
     "@types/lodash.uniq": "4.5.9",
     "@types/node": "20.19.0",
-    "bundlesize": "0.18.2",
-    "eslint": "8.57.1",
-    "eslint-plugin-prettier": "4.2.1",
-    "husky": "latest",
-    "jest": "29.7.0",
-    "pinst": "3.0.0",
+    "husky": "9.1.7",
     "precise-commits": "1.0.2",
-    "prettier": "2.8.8",
     "semantic-release": "22.0.12",
-    "ts-jest": "29.3.4",
-    "ts-node": "10.9.2",
-    "tsup": "8.5.0",
+    "size-limit": "^11.2.0",
     "typescript": "5.8.3"
   },
-  "resolutions": {
-    "npm/chalk": "5.4.1"
-  },
-  "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "node"
-  },
-  "bundlesize": [
+  "size-limit": [
     {
-      "path": "./dist/*.js",
-      "maxSize": "11 kB"
+      "path": "dist/*.js",
+      "limit": "11 kB"
+    },
+    {
+      "path": "dist/*.mjs",
+      "limit": "11 kB",
+      "import": "ColorCombos"
     }
   ],
   "release": {
     "branches": [
       "main"
     ]
-  },
-  "packageManager": "yarn@3.8.7"
+  }
 }

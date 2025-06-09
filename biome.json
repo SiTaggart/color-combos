@@ -1,0 +1,15 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.0.0-beta.6/schema.json",
+  "extends": ["@sitaggart/lint-config/biome.json"],
+  "files": {
+    "includes": [
+      "!dist/**",
+      "!**/*.d.ts",
+      "!bun.lock",
+      "!tsconfig.build.tsbuildinfo",
+      "!.claude/**",
+      "!coverage/**",
+      "!.vscode/**"
+    ]
+  }
+}

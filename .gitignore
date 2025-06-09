@@ -68,3 +68,6 @@ typings/
 .next
 
 dist/
+
+.claude/settings.local.json
+tsconfig.build.tsbuildinfo

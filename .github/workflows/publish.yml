@@ -8,50 +8,43 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: ["16"]
     steps:
       - uses: actions/checkout@v4.2.2
-      - uses: actions/setup-node@v4.4.0
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          bun-version: latest
       - name: Increase watchers
         run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
       - name: "Init: Install dependencies"
-        run: yarn install
+        run: bun install
       - name: "Build: Trigger build"
-        run: yarn build
-      - name: "Bundlesize: Trigger bundlesize check"
-        env:
-          BUNDLESIZE_GITHUB_TOKEN: ${{ secrets.BUNDLESIZE_GITHUB_TOKEN }}
-        run: yarn bundlesize
-      - name: "Test: Jest"
-        run: yarn test
-      - name: "Lint: eslint"
-        run: yarn eslint
-      - name: "Lint: prettier"
-        run: yarn prettier
+        run: bun run build
+      - name: "Test: source"
+        run: bun test
+      - name: "Test: integration"
+        run: bun test _test_/integration
+      - name: "Lint & Format: biome ci"
+        run: bunx biome ci .
 
   deploy:
     needs: test
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: ["16"]
     steps:
       - uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
       - uses: actions/setup-node@v4.4.0
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version-file: '.nvmrc'
       - name: "Init: Install dependencies"
-        run: yarn install
+        run: bun install
       - name: "Build: Trigger build staging site"
-        run: yarn build
+        run: bun run build
       - name: "Publish: Trigger semantic release"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn semantic-release
+        run: bun run semantic-release

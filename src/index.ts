@@ -1,5 +1,5 @@
-import uniq from 'lodash.uniq';
 import Color from 'color';
+import uniq from 'lodash.uniq';
 
 interface ComboColor {
   color: number[];
@@ -157,5 +157,4 @@ const ColorCombos = (
   return results;
 };
 
-// eslint-disable-next-line import/no-default-export
 export default ColorCombos;
