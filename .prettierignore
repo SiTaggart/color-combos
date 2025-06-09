@@ -1,4 +1,0 @@
-*.json
-dist/
-*.d.ts
-.yarn
