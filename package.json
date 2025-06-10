@@ -75,7 +75,7 @@
     "@sitaggart/lint-config": "^1.0.1",
     "@size-limit/preset-big-lib": "^11.2.0",
     "@types/bun": "^1.2.15",
-    "@types/color": "3.0.6",
+    "@types/color": "4.2.0",
     "@types/lodash": "4.17.17",
     "@types/lodash.uniq": "4.5.9",
     "@types/node": "20.19.0",
