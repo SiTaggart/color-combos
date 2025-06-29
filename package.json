@@ -20,7 +20,7 @@
     }
   },
   "engines": {
-    "node": "24.2.0",
+    "node": "24.3.0",
     "bun": ">=1.0.0"
   },
   "files": [
@@ -71,17 +71,17 @@
     "lodash.uniq": "4.5.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.0.0-beta.6",
+    "@biomejs/biome": "2.0.6",
     "@sitaggart/lint-config": "1.0.1",
     "@size-limit/preset-big-lib": "11.2.0",
-    "@types/bun": "1.2.16",
+    "@types/bun": "1.2.17",
     "@types/color": "4.2.0",
-    "@types/lodash": "4.17.17",
+    "@types/lodash": "4.17.19",
     "@types/lodash.uniq": "4.5.9",
-    "@types/node": "24.0.1",
+    "@types/node": "24.0.7",
     "husky": "9.1.7",
     "precise-commits": "1.0.2",
-    "semantic-release": "24.2.5",
+    "semantic-release": "24.2.6",
     "size-limit": "11.2.0",
     "typescript": "5.8.3"
   },
