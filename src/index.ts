@@ -82,6 +82,7 @@ const ColorCombos = (
       arr = uniq(arr);
     }
   } else {
+    // biome-ignore lint/suspicious/noConsole: maintain backward compatibility
     console.error('Must provide an array or object');
     return false;
   }

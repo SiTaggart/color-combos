@@ -1,6 +1,6 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.0.0-beta.6/schema.json",
-  "extends": ["@sitaggart/lint-config/biome.json"],
+  "extends": ["@sitaggart/lint-config/biome"],
   "files": {
     "includes": [
       "!dist/**",

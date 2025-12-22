@@ -8,9 +8,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Modern Features:**
 - 🎯 **ESM-first** with CommonJS fallback via dual package exports
-- 🚀 **Built with Bun** for fast development and native TypeScript support
+- 🚀 **Built with Bun** for fast development and native TypeScript support  
 - 📦 **Tree-shakeable** - marked as side-effect free
-- 🎪 **Node.js 18+** support with modern JavaScript features
+- 🎪 **Node.js 24.12.0** support with modern JavaScript features
 - 🔧 **Full TypeScript** support with comprehensive type definitions
 
 ## Key Commands
@@ -29,9 +29,6 @@ bun run build
 # Build for development (with source maps)
 bun run build:dev
 
-# Compile TypeScript declarations only
-bun run compile:types
-
 # Lint code
 bun run lint
 
@@ -39,14 +36,15 @@ bun run lint
 bun run format:fix
 
 # Check bundle size
-bun run bundlesize
+bun run size
 ```
 
 ### Testing
-- **Unit Tests**: Use Bun's native test runner, located in `src/__tests__/`
-- **Integration Tests**: Test compiled code in `test/integration/`
+- **Unit Tests**: Use Bun's native test runner, located in `src/_test_/`
+- **Integration Tests**: Test compiled code in `_test_/integration/`
   - `cjs.test.js` - Tests CommonJS build (`dist/index.js`)
   - `esm.test.js` - Tests ESM build (`dist/index.mjs`)
+  - `exports.test.js` - Tests package exports
   - `types.test.ts` - Tests TypeScript definitions
   - `node-compat.test.js` - Tests Node.js compatibility
 - Run all tests: `bun run test:all` (unit → build → integration)
@@ -65,9 +63,9 @@ The entire library is contained in `src/index.ts` which exports a single default
 ## Build Configuration
 
 - **Bun**: Native bundler that outputs both ESM (`dist/index.mjs`) and CJS (`dist/index.js`) formats
-- **TypeScript**: Targets ES2022 with strict mode enabled, using Bun's native TypeScript support
-- **Bundle Size**: Must stay under 11kB (enforced by bundlesize)
-- **Build Script**: Custom `build.ts` script uses Bun's build API for bundling and TypeScript for declaration files
+- **TypeScript**: Targets ESNext with strict mode enabled, using Bun's native TypeScript support
+- **Bundle Size**: Must stay under 11kB (enforced by size-limit)
+- **Build Script**: Custom `build.ts` script uses Bun's build API for bundling and `oxc-transform` for declaration files
 
 ## Release Process
 
