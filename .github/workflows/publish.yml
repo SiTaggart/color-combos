@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+permissions:
+  id-token: write  # Required for OIDC
+  contents: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -38,7 +42,12 @@ jobs:
           bun-version: latest
       - uses: actions/setup-node@v6.1.0
         with:
-          node-version-file: '.nvmrc'
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Clear auth token for OIDC
+        run: echo "NODE_AUTH_TOKEN=" >> $GITHUB_ENV
+      - name: Upgrade npm for OIDC
+        run: npm install -g npm@latest
       - name: "Init: Install dependencies"
         run: bun install
       - name: "Build: Trigger build staging site"
@@ -46,5 +55,4 @@ jobs:
       - name: "Publish: Trigger semantic release"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: bun run semantic-release
