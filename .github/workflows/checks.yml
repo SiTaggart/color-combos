@@ -9,7 +9,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6.0.0
+      - uses: actions/checkout@v6.0.1
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
@@ -28,7 +28,7 @@ jobs:
     env:
       CI_JOB_NUMBER: 1
     steps:
-      - uses: actions/checkout@v6.0.0
+      - uses: actions/checkout@v6.0.1
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
