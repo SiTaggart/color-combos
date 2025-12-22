@@ -1,4 +1,4 @@
-# CLAUDE.md
+# AGENTS.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Modern Features:**
 - 🎯 **ESM-first** with CommonJS fallback via dual package exports
-- 🚀 **Built with Bun** for fast development and native TypeScript support  
+- 🚀 **Built with Bun** for fast development and native TypeScript support
 - 📦 **Tree-shakeable** - marked as side-effect free
 - 🎪 **Node.js 24.12.0** support with modern JavaScript features
 - 🔧 **Full TypeScript** support with comprehensive type definitions
