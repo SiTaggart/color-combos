@@ -62,13 +62,13 @@ describe('ColorCombos TypeScript Integration', () => {
         expect(typeof combo.accessibility.aaa).toBe('boolean');
         expect(typeof combo.accessibility.aaaLarge).toBe('boolean');
 
-        // Check APCA structure
+        // Check APCA structure (apca is optional, but readability fields are required when present)
         expect(combo.apca).toBeDefined();
         expect(typeof combo.apca?.lc).toBe('number');
         expect(['light-on-dark', 'dark-on-light']).toContain(combo.apca?.polarity);
         expect(combo.apca?.readability).toBeDefined();
-        expect(typeof combo.apca?.readability?.bodyText?.thresholdLc).toBe('number');
-        expect(typeof combo.apca?.readability?.bodyText?.meets).toBe('boolean');
+        expect(typeof combo.apca?.readability.bodyText.thresholdLc).toBe('number');
+        expect(typeof combo.apca?.readability.bodyText.meets).toBe('boolean');
       }
     }
   });

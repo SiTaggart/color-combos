@@ -31,13 +31,13 @@ The default shape of the returned array can be expressed as:
         apca?: {
           lc: number;
           polarity: 'light-on-dark' | 'dark-on-light';
-          readability?: {
-            fluentText?: { thresholdLc: number; meets: boolean };
-            bodyText?: { thresholdLc: number; meets: boolean };
-            contentText?: { thresholdLc: number; meets: boolean };
-            largeText?: { thresholdLc: number; meets: boolean };
-            minimumText?: { thresholdLc: number; meets: boolean };
-            nonText?: { thresholdLc: number; meets: boolean };
+          readability: {
+            fluentText: { thresholdLc: number; meets: boolean };
+            bodyText: { thresholdLc: number; meets: boolean };
+            contentText: { thresholdLc: number; meets: boolean };
+            largeText: { thresholdLc: number; meets: boolean };
+            minimumText: { thresholdLc: number; meets: boolean };
+            nonText: { thresholdLc: number; meets: boolean };
           };
         };
       }
