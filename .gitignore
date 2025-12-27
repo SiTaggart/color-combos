@@ -71,3 +71,6 @@ dist/
 
 .claude/settings.local.json
 tsconfig.build.tsbuildinfo
+
+# Continuous Claude cache (local only)
+.claude/cache/
