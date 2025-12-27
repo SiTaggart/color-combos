@@ -27,11 +27,13 @@ describe('ColorCombos', (): void => {
             apca: {
               lc: -69.620_962_879_648_45,
               polarity: 'light-on-dark',
-              evaluations: {
-                bodyText14Regular: { minLc: 75, pass: false },
-                bodyText16Regular: { minLc: 60, pass: true },
-                largeText24Regular: { minLc: 45, pass: true },
-                largeText18Bold: { minLc: 45, pass: true },
+              readability: {
+                fluentText: { thresholdLc: 90, meets: false },
+                bodyText: { thresholdLc: 75, meets: false },
+                contentText: { thresholdLc: 60, meets: true },
+                largeText: { thresholdLc: 45, meets: true },
+                minimumText: { thresholdLc: 30, meets: true },
+                nonText: { thresholdLc: 15, meets: true },
               },
             },
             color: [255, 0, 0],
@@ -58,11 +60,13 @@ describe('ColorCombos', (): void => {
             apca: {
               lc: 64.126_215_381_791_67,
               polarity: 'dark-on-light',
-              evaluations: {
-                bodyText14Regular: { minLc: 75, pass: false },
-                bodyText16Regular: { minLc: 60, pass: true },
-                largeText24Regular: { minLc: 45, pass: true },
-                largeText18Bold: { minLc: 45, pass: true },
+              readability: {
+                fluentText: { thresholdLc: 90, meets: false },
+                bodyText: { thresholdLc: 75, meets: false },
+                contentText: { thresholdLc: 60, meets: true },
+                largeText: { thresholdLc: 45, meets: true },
+                minimumText: { thresholdLc: 30, meets: true },
+                nonText: { thresholdLc: 15, meets: true },
               },
             },
             color: [255, 255, 255],
@@ -94,11 +98,13 @@ describe('ColorCombos', (): void => {
             apca: {
               lc: -69.620_962_879_648_45,
               polarity: 'light-on-dark',
-              evaluations: {
-                bodyText14Regular: { minLc: 75, pass: false },
-                bodyText16Regular: { minLc: 60, pass: true },
-                largeText24Regular: { minLc: 45, pass: true },
-                largeText18Bold: { minLc: 45, pass: true },
+              readability: {
+                fluentText: { thresholdLc: 90, meets: false },
+                bodyText: { thresholdLc: 75, meets: false },
+                contentText: { thresholdLc: 60, meets: true },
+                largeText: { thresholdLc: 45, meets: true },
+                minimumText: { thresholdLc: 30, meets: true },
+                nonText: { thresholdLc: 15, meets: true },
               },
             },
             color: [255, 0, 0],
@@ -125,11 +131,13 @@ describe('ColorCombos', (): void => {
             apca: {
               lc: 64.126_215_381_791_67,
               polarity: 'dark-on-light',
-              evaluations: {
-                bodyText14Regular: { minLc: 75, pass: false },
-                bodyText16Regular: { minLc: 60, pass: true },
-                largeText24Regular: { minLc: 45, pass: true },
-                largeText18Bold: { minLc: 45, pass: true },
+              readability: {
+                fluentText: { thresholdLc: 90, meets: false },
+                bodyText: { thresholdLc: 75, meets: false },
+                contentText: { thresholdLc: 60, meets: true },
+                largeText: { thresholdLc: 45, meets: true },
+                minimumText: { thresholdLc: 30, meets: true },
+                nonText: { thresholdLc: 15, meets: true },
               },
             },
             color: [255, 255, 255],
@@ -165,11 +173,13 @@ describe('ColorCombos', (): void => {
             apca: {
               lc: -69.620_962_879_648_45,
               polarity: 'light-on-dark',
-              evaluations: {
-                bodyText14Regular: { minLc: 75, pass: false },
-                bodyText16Regular: { minLc: 60, pass: true },
-                largeText24Regular: { minLc: 45, pass: true },
-                largeText18Bold: { minLc: 45, pass: true },
+              readability: {
+                fluentText: { thresholdLc: 90, meets: false },
+                bodyText: { thresholdLc: 75, meets: false },
+                contentText: { thresholdLc: 60, meets: true },
+                largeText: { thresholdLc: 45, meets: true },
+                minimumText: { thresholdLc: 30, meets: true },
+                nonText: { thresholdLc: 15, meets: true },
               },
             },
             contrast: 3.998_476_770_753_998_5,
@@ -190,11 +200,13 @@ describe('ColorCombos', (): void => {
             apca: {
               lc: 64.126_215_381_791_67,
               polarity: 'dark-on-light',
-              evaluations: {
-                bodyText14Regular: { minLc: 75, pass: false },
-                bodyText16Regular: { minLc: 60, pass: true },
-                largeText24Regular: { minLc: 45, pass: true },
-                largeText18Bold: { minLc: 45, pass: true },
+              readability: {
+                fluentText: { thresholdLc: 90, meets: false },
+                bodyText: { thresholdLc: 75, meets: false },
+                contentText: { thresholdLc: 60, meets: true },
+                largeText: { thresholdLc: 45, meets: true },
+                minimumText: { thresholdLc: 30, meets: true },
+                nonText: { thresholdLc: 15, meets: true },
               },
             },
             contrast: 3.998_476_770_753_998_5,
@@ -220,11 +232,13 @@ describe('ColorCombos', (): void => {
             apca: {
               lc: -69.620_962_879_648_45,
               polarity: 'light-on-dark',
-              evaluations: {
-                bodyText14Regular: { minLc: 75, pass: false },
-                bodyText16Regular: { minLc: 60, pass: true },
-                largeText24Regular: { minLc: 45, pass: true },
-                largeText18Bold: { minLc: 45, pass: true },
+              readability: {
+                fluentText: { thresholdLc: 90, meets: false },
+                bodyText: { thresholdLc: 75, meets: false },
+                contentText: { thresholdLc: 60, meets: true },
+                largeText: { thresholdLc: 45, meets: true },
+                minimumText: { thresholdLc: 30, meets: true },
+                nonText: { thresholdLc: 15, meets: true },
               },
             },
             contrast: 3.998_476_770_753_998_5,
@@ -245,11 +259,13 @@ describe('ColorCombos', (): void => {
             apca: {
               lc: 64.126_215_381_791_67,
               polarity: 'dark-on-light',
-              evaluations: {
-                bodyText14Regular: { minLc: 75, pass: false },
-                bodyText16Regular: { minLc: 60, pass: true },
-                largeText24Regular: { minLc: 45, pass: true },
-                largeText18Bold: { minLc: 45, pass: true },
+              readability: {
+                fluentText: { thresholdLc: 90, meets: false },
+                bodyText: { thresholdLc: 75, meets: false },
+                contentText: { thresholdLc: 60, meets: true },
+                largeText: { thresholdLc: 45, meets: true },
+                minimumText: { thresholdLc: 30, meets: true },
+                nonText: { thresholdLc: 15, meets: true },
               },
             },
             contrast: 3.998_476_770_753_998_5,
@@ -275,11 +291,13 @@ describe('ColorCombos', (): void => {
             apca: {
               lc: -69.620_962_879_648_45,
               polarity: 'light-on-dark',
-              evaluations: {
-                bodyText14Regular: { minLc: 75, pass: false },
-                bodyText16Regular: { minLc: 60, pass: true },
-                largeText24Regular: { minLc: 45, pass: true },
-                largeText18Bold: { minLc: 45, pass: true },
+              readability: {
+                fluentText: { thresholdLc: 90, meets: false },
+                bodyText: { thresholdLc: 75, meets: false },
+                contentText: { thresholdLc: 60, meets: true },
+                largeText: { thresholdLc: 45, meets: true },
+                minimumText: { thresholdLc: 30, meets: true },
+                nonText: { thresholdLc: 15, meets: true },
               },
             },
             contrast: 3.998_476_770_753_998_5,
@@ -295,11 +313,13 @@ describe('ColorCombos', (): void => {
             apca: {
               lc: 0,
               polarity: 'dark-on-light',
-              evaluations: {
-                bodyText14Regular: { minLc: 75, pass: false },
-                bodyText16Regular: { minLc: 60, pass: false },
-                largeText24Regular: { minLc: 45, pass: false },
-                largeText18Bold: { minLc: 45, pass: false },
+              readability: {
+                fluentText: { thresholdLc: 90, meets: false },
+                bodyText: { thresholdLc: 75, meets: false },
+                contentText: { thresholdLc: 60, meets: false },
+                largeText: { thresholdLc: 45, meets: false },
+                minimumText: { thresholdLc: 30, meets: false },
+                nonText: { thresholdLc: 15, meets: false },
               },
             },
             contrast: 1,
@@ -320,11 +340,13 @@ describe('ColorCombos', (): void => {
             apca: {
               lc: 64.126_215_381_791_67,
               polarity: 'dark-on-light',
-              evaluations: {
-                bodyText14Regular: { minLc: 75, pass: false },
-                bodyText16Regular: { minLc: 60, pass: true },
-                largeText24Regular: { minLc: 45, pass: true },
-                largeText18Bold: { minLc: 45, pass: true },
+              readability: {
+                fluentText: { thresholdLc: 90, meets: false },
+                bodyText: { thresholdLc: 75, meets: false },
+                contentText: { thresholdLc: 60, meets: true },
+                largeText: { thresholdLc: 45, meets: true },
+                minimumText: { thresholdLc: 30, meets: true },
+                nonText: { thresholdLc: 15, meets: true },
               },
             },
             contrast: 3.998_476_770_753_998_5,
@@ -340,11 +362,13 @@ describe('ColorCombos', (): void => {
             apca: {
               lc: 64.126_215_381_791_67,
               polarity: 'dark-on-light',
-              evaluations: {
-                bodyText14Regular: { minLc: 75, pass: false },
-                bodyText16Regular: { minLc: 60, pass: true },
-                largeText24Regular: { minLc: 45, pass: true },
-                largeText18Bold: { minLc: 45, pass: true },
+              readability: {
+                fluentText: { thresholdLc: 90, meets: false },
+                bodyText: { thresholdLc: 75, meets: false },
+                contentText: { thresholdLc: 60, meets: true },
+                largeText: { thresholdLc: 45, meets: true },
+                minimumText: { thresholdLc: 30, meets: true },
+                nonText: { thresholdLc: 15, meets: true },
               },
             },
             contrast: 3.998_476_770_753_998_5,
@@ -365,11 +389,13 @@ describe('ColorCombos', (): void => {
             apca: {
               lc: 0,
               polarity: 'dark-on-light',
-              evaluations: {
-                bodyText14Regular: { minLc: 75, pass: false },
-                bodyText16Regular: { minLc: 60, pass: false },
-                largeText24Regular: { minLc: 45, pass: false },
-                largeText18Bold: { minLc: 45, pass: false },
+              readability: {
+                fluentText: { thresholdLc: 90, meets: false },
+                bodyText: { thresholdLc: 75, meets: false },
+                contentText: { thresholdLc: 60, meets: false },
+                largeText: { thresholdLc: 45, meets: false },
+                minimumText: { thresholdLc: 30, meets: false },
+                nonText: { thresholdLc: 15, meets: false },
               },
             },
             contrast: 1,
@@ -385,11 +411,13 @@ describe('ColorCombos', (): void => {
             apca: {
               lc: -69.620_962_879_648_45,
               polarity: 'light-on-dark',
-              evaluations: {
-                bodyText14Regular: { minLc: 75, pass: false },
-                bodyText16Regular: { minLc: 60, pass: true },
-                largeText24Regular: { minLc: 45, pass: true },
-                largeText18Bold: { minLc: 45, pass: true },
+              readability: {
+                fluentText: { thresholdLc: 90, meets: false },
+                bodyText: { thresholdLc: 75, meets: false },
+                contentText: { thresholdLc: 60, meets: true },
+                largeText: { thresholdLc: 45, meets: true },
+                minimumText: { thresholdLc: 30, meets: true },
+                nonText: { thresholdLc: 15, meets: true },
               },
             },
             contrast: 3.998_476_770_753_998_5,
@@ -415,11 +443,13 @@ describe('ColorCombos', (): void => {
             apca: {
               lc: -77.206_163_603_585_89,
               polarity: 'light-on-dark',
-              evaluations: {
-                bodyText14Regular: { minLc: 75, pass: true },
-                bodyText16Regular: { minLc: 60, pass: true },
-                largeText24Regular: { minLc: 45, pass: true },
-                largeText18Bold: { minLc: 45, pass: true },
+              readability: {
+                fluentText: { thresholdLc: 90, meets: false },
+                bodyText: { thresholdLc: 75, meets: true },
+                contentText: { thresholdLc: 60, meets: true },
+                largeText: { thresholdLc: 45, meets: true },
+                minimumText: { thresholdLc: 30, meets: true },
+                nonText: { thresholdLc: 15, meets: true },
               },
             },
             contrast: 4.658_034_537_943_552,
@@ -440,11 +470,13 @@ describe('ColorCombos', (): void => {
             apca: {
               lc: 71.745_456_986_788_7,
               polarity: 'dark-on-light',
-              evaluations: {
-                bodyText14Regular: { minLc: 75, pass: false },
-                bodyText16Regular: { minLc: 60, pass: true },
-                largeText24Regular: { minLc: 45, pass: true },
-                largeText18Bold: { minLc: 45, pass: true },
+              readability: {
+                fluentText: { thresholdLc: 90, meets: false },
+                bodyText: { thresholdLc: 75, meets: false },
+                contentText: { thresholdLc: 60, meets: true },
+                largeText: { thresholdLc: 45, meets: true },
+                minimumText: { thresholdLc: 30, meets: true },
+                nonText: { thresholdLc: 15, meets: true },
               },
             },
             contrast: 4.658_034_537_943_552,
@@ -472,11 +504,13 @@ describe('ColorCombos', (): void => {
             apca: {
               lc: -90.151_482_995_425_85,
               polarity: 'light-on-dark',
-              evaluations: {
-                bodyText14Regular: { minLc: 75, pass: true },
-                bodyText16Regular: { minLc: 60, pass: true },
-                largeText24Regular: { minLc: 45, pass: true },
-                largeText18Bold: { minLc: 45, pass: true },
+              readability: {
+                fluentText: { thresholdLc: 90, meets: true },
+                bodyText: { thresholdLc: 75, meets: true },
+                contentText: { thresholdLc: 60, meets: true },
+                largeText: { thresholdLc: 45, meets: true },
+                minimumText: { thresholdLc: 30, meets: true },
+                nonText: { thresholdLc: 15, meets: true },
               },
             },
             contrast: 8.129_916_711_550_36,
@@ -497,11 +531,13 @@ describe('ColorCombos', (): void => {
             apca: {
               lc: 85.278_874_035_337_82,
               polarity: 'dark-on-light',
-              evaluations: {
-                bodyText14Regular: { minLc: 75, pass: true },
-                bodyText16Regular: { minLc: 60, pass: true },
-                largeText24Regular: { minLc: 45, pass: true },
-                largeText18Bold: { minLc: 45, pass: true },
+              readability: {
+                fluentText: { thresholdLc: 90, meets: false },
+                bodyText: { thresholdLc: 75, meets: true },
+                contentText: { thresholdLc: 60, meets: true },
+                largeText: { thresholdLc: 45, meets: true },
+                minimumText: { thresholdLc: 30, meets: true },
+                nonText: { thresholdLc: 15, meets: true },
               },
             },
             contrast: 8.129_916_711_550_36,
@@ -527,11 +563,13 @@ describe('ColorCombos', (): void => {
             apca: {
               lc: -90.151_482_995_425_85,
               polarity: 'light-on-dark',
-              evaluations: {
-                bodyText14Regular: { minLc: 75, pass: true },
-                bodyText16Regular: { minLc: 60, pass: true },
-                largeText24Regular: { minLc: 45, pass: true },
-                largeText18Bold: { minLc: 45, pass: true },
+              readability: {
+                fluentText: { thresholdLc: 90, meets: true },
+                bodyText: { thresholdLc: 75, meets: true },
+                contentText: { thresholdLc: 60, meets: true },
+                largeText: { thresholdLc: 45, meets: true },
+                minimumText: { thresholdLc: 30, meets: true },
+                nonText: { thresholdLc: 15, meets: true },
               },
             },
             contrast: 8.129_916_711_550_36,
@@ -552,11 +590,13 @@ describe('ColorCombos', (): void => {
             apca: {
               lc: 85.278_874_035_337_82,
               polarity: 'dark-on-light',
-              evaluations: {
-                bodyText14Regular: { minLc: 75, pass: true },
-                bodyText16Regular: { minLc: 60, pass: true },
-                largeText24Regular: { minLc: 45, pass: true },
-                largeText18Bold: { minLc: 45, pass: true },
+              readability: {
+                fluentText: { thresholdLc: 90, meets: false },
+                bodyText: { thresholdLc: 75, meets: true },
+                contentText: { thresholdLc: 60, meets: true },
+                largeText: { thresholdLc: 45, meets: true },
+                minimumText: { thresholdLc: 30, meets: true },
+                nonText: { thresholdLc: 15, meets: true },
               },
             },
             contrast: 8.129_916_711_550_36,
@@ -582,11 +622,13 @@ describe('ColorCombos', (): void => {
             apca: {
               lc: -65.147_511_775_050_09,
               polarity: 'light-on-dark',
-              evaluations: {
-                bodyText14Regular: { minLc: 75, pass: false },
-                bodyText16Regular: { minLc: 60, pass: true },
-                largeText24Regular: { minLc: 45, pass: true },
-                largeText18Bold: { minLc: 45, pass: true },
+              readability: {
+                fluentText: { thresholdLc: 90, meets: false },
+                bodyText: { thresholdLc: 75, meets: false },
+                contentText: { thresholdLc: 60, meets: true },
+                largeText: { thresholdLc: 45, meets: true },
+                minimumText: { thresholdLc: 30, meets: true },
+                nonText: { thresholdLc: 15, meets: true },
               },
             },
             contrast: 4.739_544_356_484_656,
@@ -607,11 +649,13 @@ describe('ColorCombos', (): void => {
             apca: {
               lc: 61.546_709_853_263_27,
               polarity: 'dark-on-light',
-              evaluations: {
-                bodyText14Regular: { minLc: 75, pass: false },
-                bodyText16Regular: { minLc: 60, pass: true },
-                largeText24Regular: { minLc: 45, pass: true },
-                largeText18Bold: { minLc: 45, pass: true },
+              readability: {
+                fluentText: { thresholdLc: 90, meets: false },
+                bodyText: { thresholdLc: 75, meets: false },
+                contentText: { thresholdLc: 60, meets: true },
+                largeText: { thresholdLc: 45, meets: true },
+                minimumText: { thresholdLc: 30, meets: true },
+                nonText: { thresholdLc: 15, meets: true },
               },
             },
             contrast: 4.739_544_356_484_656,

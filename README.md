@@ -28,6 +28,18 @@ The default shape of the returned array can be expressed as:
           aaa: boolean;
           aaaLarge: boolean;
         };
+        apca?: {
+          lc: number;
+          polarity: 'light-on-dark' | 'dark-on-light';
+          readability?: {
+            fluentText?: { thresholdLc: number; meets: boolean };
+            bodyText?: { thresholdLc: number; meets: boolean };
+            contentText?: { thresholdLc: number; meets: boolean };
+            largeText?: { thresholdLc: number; meets: boolean };
+            minimumText?: { thresholdLc: number; meets: boolean };
+            nonText?: { thresholdLc: number; meets: boolean };
+          };
+        };
       }
     ];
   }
@@ -339,3 +351,22 @@ ColorCombos(['#fff', 'rgb(255,255,255)', '#000'], { compact: true, uniq: false }
 ```
 
 Even though `#fff` and `rgb(255,255,255)` are the same color, `ColorCombos` will not omit the duplicate from the returned results.
+
+## APCA (WCAG 3 Candidate)
+
+`ColorCombos` includes an `apca` result for each color pair:
+
+- `apca.lc` is the signed APCA Lightness Contrast value (negative = light text on dark background, positive = dark text on light background).
+- `apca.readability.*.meets` compares `Math.abs(apca.lc)` against the APCAeasyIntro “Use‑Case Ranges” thresholds:
+  - `fluentText`: `Lc 90` (preferred; for fluent/body text columns at ≥14px/400)
+  - `bodyText`: `Lc 75` (minimum; for body text columns at ≥18px/400)
+  - `contentText`: `Lc 60` (minimum; for content text at ≥24px/400 or ≥16px/700)
+  - `largeText`: `Lc 45` (minimum; for large text/headlines at ≥36px/400 or ≥24px/700)
+  - `minimumText`: `Lc 30` (absolute minimum; for text not listed above, and large/solid non‑text)
+  - `nonText`: `Lc 15` (absolute minimum; for discernible non‑text ≥5px)
+
+### Caveats
+
+- APCA is the candidate contrast method for WCAG 3 and is still under development; these booleans are a convenience check against published guidance, not an official “conformance” result.
+- Thresholds are based on the reference font (Helvetica/Arial) and don’t account for font‑specific look‑up tables or other typographic factors (spacing, stroke width, etc).
+- Inputs with alpha (e.g. `rgba(...)`) are not composited against a background for APCA; results assume opaque colors.

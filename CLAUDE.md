@@ -58,7 +58,7 @@ The entire library is contained in `src/index.ts` which exports a single default
 2. **Color Processing**: Uses the `color` library to parse various formats (hex, rgb, hsl, named colors)
 3. **Contrast Calculation**: Computes both WCAG 2.x ratios and APCA Lc values between all color pairs
 4. **WCAG 2.x Compliance**: Checks against AA (4.5:1), AA Large (3:1), AAA (7:1), and AAA Large (4.5:1) standards
-5. **APCA Support**: Returns Lc value, polarity (light-on-dark/dark-on-light), and font-size evaluations
+5. **APCA Support**: Returns Lc value, polarity (light-on-dark/dark-on-light), and readability threshold checks
 6. **Options**: Supports `compact` mode, `threshold` filtering, and `uniq` duplicate removal
 
 ## Build Configuration

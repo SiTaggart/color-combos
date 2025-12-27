@@ -66,9 +66,9 @@ describe('ColorCombos TypeScript Integration', () => {
         expect(combo.apca).toBeDefined();
         expect(typeof combo.apca?.lc).toBe('number');
         expect(['light-on-dark', 'dark-on-light']).toContain(combo.apca?.polarity);
-        expect(combo.apca?.evaluations).toBeDefined();
-        expect(typeof combo.apca?.evaluations?.bodyText14Regular?.minLc).toBe('number');
-        expect(typeof combo.apca?.evaluations?.bodyText14Regular?.pass).toBe('boolean');
+        expect(combo.apca?.readability).toBeDefined();
+        expect(typeof combo.apca?.readability?.bodyText?.thresholdLc).toBe('number');
+        expect(typeof combo.apca?.readability?.bodyText?.meets).toBe('boolean');
       }
     }
   });

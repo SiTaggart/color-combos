@@ -18,18 +18,20 @@ export interface Accessibility {
 }
 
 export interface ApcaEvaluation {
-  minLc: number;
-  pass: boolean;
+  thresholdLc: number;
+  meets: boolean;
 }
 
 export interface ApcaAccessibility {
   lc: number;
   polarity: 'light-on-dark' | 'dark-on-light';
-  evaluations?: {
-    bodyText14Regular?: ApcaEvaluation;
-    bodyText16Regular?: ApcaEvaluation;
-    largeText24Regular?: ApcaEvaluation;
-    largeText18Bold?: ApcaEvaluation;
+  readability?: {
+    fluentText?: ApcaEvaluation;
+    bodyText?: ApcaEvaluation;
+    contentText?: ApcaEvaluation;
+    largeText?: ApcaEvaluation;
+    minimumText?: ApcaEvaluation;
+    nonText?: ApcaEvaluation;
   };
 }
 
@@ -172,11 +174,13 @@ const ColorCombos = (
         combination.apca = {
           lc: apcaLc,
           polarity: apcaLc < 0 ? 'light-on-dark' : 'dark-on-light',
-          evaluations: {
-            bodyText14Regular: { minLc: 75, pass: absLc >= 75 },
-            bodyText16Regular: { minLc: 60, pass: absLc >= 60 },
-            largeText24Regular: { minLc: 45, pass: absLc >= 45 },
-            largeText18Bold: { minLc: 45, pass: absLc >= 45 },
+          readability: {
+            fluentText: { thresholdLc: 90, meets: absLc >= 90 },
+            bodyText: { thresholdLc: 75, meets: absLc >= 75 },
+            contentText: { thresholdLc: 60, meets: absLc >= 60 },
+            largeText: { thresholdLc: 45, meets: absLc >= 45 },
+            minimumText: { thresholdLc: 30, meets: absLc >= 30 },
+            nonText: { thresholdLc: 15, meets: absLc >= 15 },
           },
         };
 

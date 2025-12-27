@@ -132,11 +132,13 @@ describe('ColorCombos ESM Integration', () => {
     // White on black should have high negative Lc (around -108)
     expect(blackCombo.apca.lc).toBeLessThan(-100);
 
-    // Evaluations should all pass for max contrast
-    expect(blackCombo.apca.evaluations.bodyText14Regular.pass).toBe(true);
-    expect(blackCombo.apca.evaluations.bodyText16Regular.pass).toBe(true);
-    expect(blackCombo.apca.evaluations.largeText24Regular.pass).toBe(true);
-    expect(blackCombo.apca.evaluations.largeText18Bold.pass).toBe(true);
+    // Readability thresholds should all be met for max contrast
+    expect(blackCombo.apca.readability.fluentText.meets).toBe(true);
+    expect(blackCombo.apca.readability.bodyText.meets).toBe(true);
+    expect(blackCombo.apca.readability.contentText.meets).toBe(true);
+    expect(blackCombo.apca.readability.largeText.meets).toBe(true);
+    expect(blackCombo.apca.readability.minimumText.meets).toBe(true);
+    expect(blackCombo.apca.readability.nonText.meets).toBe(true);
   });
 
   it('should detect correct APCA polarity', () => {
