@@ -25,13 +25,13 @@ export interface ApcaEvaluation {
 export interface ApcaAccessibility {
   lc: number;
   polarity: 'light-on-dark' | 'dark-on-light';
-  readability?: {
-    fluentText?: ApcaEvaluation;
-    bodyText?: ApcaEvaluation;
-    contentText?: ApcaEvaluation;
-    largeText?: ApcaEvaluation;
-    minimumText?: ApcaEvaluation;
-    nonText?: ApcaEvaluation;
+  readability: {
+    fluentText: ApcaEvaluation;
+    bodyText: ApcaEvaluation;
+    contentText: ApcaEvaluation;
+    largeText: ApcaEvaluation;
+    minimumText: ApcaEvaluation;
+    nonText: ApcaEvaluation;
   };
 }
 
@@ -169,20 +169,23 @@ const ColorCombos = (
           aaaLarge: combination.contrast >= MINIMUMS.aaaLarge,
         };
 
-        const apcaLc = calcAPCA(color.hex(), bg.hex()) as number;
-        const absLc = Math.abs(apcaLc);
-        combination.apca = {
-          lc: apcaLc,
-          polarity: apcaLc < 0 ? 'light-on-dark' : 'dark-on-light',
-          readability: {
-            fluentText: { thresholdLc: 90, meets: absLc >= 90 },
-            bodyText: { thresholdLc: 75, meets: absLc >= 75 },
-            contentText: { thresholdLc: 60, meets: absLc >= 60 },
-            largeText: { thresholdLc: 45, meets: absLc >= 45 },
-            minimumText: { thresholdLc: 30, meets: absLc >= 30 },
-            nonText: { thresholdLc: 15, meets: absLc >= 15 },
-          },
-        };
+        const apcaLcRaw = calcAPCA(color.hex(), bg.hex());
+        if (typeof apcaLcRaw === 'number') {
+          const apcaLc = apcaLcRaw;
+          const absLc = Math.abs(apcaLc);
+          combination.apca = {
+            lc: apcaLc,
+            polarity: apcaLc < 0 ? 'light-on-dark' : 'dark-on-light',
+            readability: {
+              fluentText: { thresholdLc: 90, meets: absLc >= 90 },
+              bodyText: { thresholdLc: 75, meets: absLc >= 75 },
+              contentText: { thresholdLc: 60, meets: absLc >= 60 },
+              largeText: { thresholdLc: 45, meets: absLc >= 45 },
+              minimumText: { thresholdLc: 30, meets: absLc >= 30 },
+              nonText: { thresholdLc: 15, meets: absLc >= 15 },
+            },
+          };
+        }
 
         return combination;
       });
