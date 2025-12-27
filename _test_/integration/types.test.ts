@@ -61,6 +61,14 @@ describe('ColorCombos TypeScript Integration', () => {
         expect(typeof combo.accessibility.aaLarge).toBe('boolean');
         expect(typeof combo.accessibility.aaa).toBe('boolean');
         expect(typeof combo.accessibility.aaaLarge).toBe('boolean');
+
+        // Check APCA structure
+        expect(combo.apca).toBeDefined();
+        expect(typeof combo.apca?.lc).toBe('number');
+        expect(['light-on-dark', 'dark-on-light']).toContain(combo.apca?.polarity);
+        expect(combo.apca?.evaluations).toBeDefined();
+        expect(typeof combo.apca?.evaluations?.bodyText14Regular?.minLc).toBe('number');
+        expect(typeof combo.apca?.evaluations?.bodyText14Regular?.pass).toBe('boolean');
       }
     }
   });

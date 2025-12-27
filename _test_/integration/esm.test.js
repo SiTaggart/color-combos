@@ -118,4 +118,34 @@ describe('ColorCombos ESM Integration', () => {
     expect(result[0]).toHaveProperty('hex');
     expect(result[0]).toHaveProperty('combinations');
   });
+
+  it('should provide APCA accessibility data', () => {
+    const result = ColorCombos(['white', 'black']);
+    const whiteCombo = result.find((c) => c.hex === '#FFFFFF');
+    const blackCombo = whiteCombo.combinations.find((c) => c.hex === '#000000');
+
+    // APCA should be present
+    expect(blackCombo.apca).toBeDefined();
+    expect(typeof blackCombo.apca.lc).toBe('number');
+    expect(blackCombo.apca.polarity).toBe('light-on-dark');
+
+    // White on black should have high negative Lc (around -108)
+    expect(blackCombo.apca.lc).toBeLessThan(-100);
+
+    // Evaluations should all pass for max contrast
+    expect(blackCombo.apca.evaluations.bodyText14Regular.pass).toBe(true);
+    expect(blackCombo.apca.evaluations.bodyText16Regular.pass).toBe(true);
+    expect(blackCombo.apca.evaluations.largeText24Regular.pass).toBe(true);
+    expect(blackCombo.apca.evaluations.largeText18Bold.pass).toBe(true);
+  });
+
+  it('should detect correct APCA polarity', () => {
+    const result = ColorCombos(['black', 'white']);
+    const blackCombo = result.find((c) => c.hex === '#000000');
+    const whiteCombo = blackCombo.combinations.find((c) => c.hex === '#FFFFFF');
+
+    // Black text on white background = dark-on-light (positive Lc)
+    expect(whiteCombo.apca.polarity).toBe('dark-on-light');
+    expect(whiteCombo.apca.lc).toBeGreaterThan(100);
+  });
 });

@@ -72,5 +72,17 @@ dist/
 .claude/settings.local.json
 tsconfig.build.tsbuildinfo
 
-# Continuous Claude cache (local only)
+# Claude cache (async results, temp data, agent outputs)
 .claude/cache/
+.claude/tsc-cache/
+
+# Thoughts directory (user-specific research and plans)
+thoughts/
+!thoughts/shared/
+!thoughts/shared/.gitkeep
+!thoughts/shared/plans/.gitkeep
+!thoughts/shared/research/.gitkeep
+!thoughts/shared/handoffs/.gitkeep
+
+# Claude reasoning data (local only, per-developer)
+.git/claude/

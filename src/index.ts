@@ -1,3 +1,4 @@
+import { calcAPCA } from 'apca-w3';
 import Color from 'color';
 import uniq from 'lodash.uniq';
 
@@ -16,6 +17,22 @@ export interface Accessibility {
   aaaLarge: boolean;
 }
 
+export interface ApcaEvaluation {
+  minLc: number;
+  pass: boolean;
+}
+
+export interface ApcaAccessibility {
+  lc: number;
+  polarity: 'light-on-dark' | 'dark-on-light';
+  evaluations?: {
+    bodyText14Regular?: ApcaEvaluation;
+    bodyText16Regular?: ApcaEvaluation;
+    largeText24Regular?: ApcaEvaluation;
+    largeText18Bold?: ApcaEvaluation;
+  };
+}
+
 export interface Combination {
   accessibility: Accessibility;
   color?: number[];
@@ -23,6 +40,7 @@ export interface Combination {
   hex: string;
   model?: string;
   valpha?: number;
+  apca?: ApcaAccessibility;
 }
 
 export interface ColorCombo {
@@ -147,6 +165,19 @@ const ColorCombos = (
           aaLarge: combination.contrast >= MINIMUMS.aaLarge,
           aaa: combination.contrast >= MINIMUMS.aaa,
           aaaLarge: combination.contrast >= MINIMUMS.aaaLarge,
+        };
+
+        const apcaLc = calcAPCA(color.hex(), bg.hex()) as number;
+        const absLc = Math.abs(apcaLc);
+        combination.apca = {
+          lc: apcaLc,
+          polarity: apcaLc < 0 ? 'light-on-dark' : 'dark-on-light',
+          evaluations: {
+            bodyText14Regular: { minLc: 75, pass: absLc >= 75 },
+            bodyText16Regular: { minLc: 60, pass: absLc >= 60 },
+            largeText24Regular: { minLc: 45, pass: absLc >= 45 },
+            largeText18Bold: { minLc: 45, pass: absLc >= 45 },
+          },
         };
 
         return combination;
