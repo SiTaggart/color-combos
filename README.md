@@ -31,6 +31,23 @@ The default shape of the returned array can be expressed as:
         apca?: {
           lc: number;
           polarity: 'light-on-dark' | 'dark-on-light';
+          minimumFontSize: {
+            100: number | 'prohibited';
+            200: number | 'prohibited';
+            300: number | 'prohibited';
+            400: number | 'prohibited';
+            500: number | 'prohibited';
+            600: number | 'prohibited';
+            700: number | 'prohibited';
+            800: number | 'prohibited';
+            900: number | 'prohibited';
+          };
+          fontRequirement?: {
+            fontSize: number;
+            fontWeight: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+            minimumFontSize: number | 'prohibited';
+            meetsRequirement: boolean;
+          };
           readability: {
             fluentText: { thresholdLc: number; meets: boolean };
             bodyText: { thresholdLc: number; meets: boolean };
@@ -54,7 +71,7 @@ import ColorCombos from 'color-combos';
 
 ## Usage
 
-`ColorCombos` takes two arguments; `colors: string[] | { [name: string]: string }` and optional `options: { compact?: boolean; threshold?: number; uniq?: boolean; }`
+`ColorCombos` takes two arguments; `colors: string[] | { [name: string]: string }` and optional `options: { compact?: boolean; threshold?: number; uniq?: boolean; apca?: { fontSize?: number; fontWeight?: FontWeight } }`
 
 ```ts
 ColorCombos(
@@ -63,6 +80,10 @@ ColorCombos(
     compact?: boolean;
     threshold?: number;
     uniq?: boolean;
+    apca?: {
+      fontSize?: number;
+      fontWeight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+    };
   }
 )
 ```
@@ -220,15 +241,16 @@ returns
 ]
 ```
 
-### Optional `options: { compact?: boolean; threshold?: number; uniq?: boolean; }`
+### Optional `options: { compact?: boolean; threshold?: number; uniq?: boolean; apca?: {...} }`
 
-`ColorCombos` can take some optional options that can affect the returned array of colors. Options are represented as an object that can have three keys; `compact`, `threshold`, and `uniq`. By default those options are set to:
+`ColorCombos` can take some optional options that can affect the returned array of colors. Options are represented as an object that can have four keys; `compact`, `threshold`, `uniq`, and `apca`. By default those options are set to:
 
 ```json
 {
   "compact": false,
   "threshold": 0,
-  "uniq": true
+  "uniq": true,
+  "apca": undefined
 }
 ```
 
@@ -354,10 +376,54 @@ Even though `#fff` and `rgb(255,255,255)` are the same color, `ColorCombos` will
 
 ## APCA (WCAG 3 Candidate)
 
-`ColorCombos` includes an `apca` result for each color pair:
+`ColorCombos` includes an `apca` result for each color pair with three main features:
+
+### 1. Lc Value and Polarity
 
 - `apca.lc` is the signed APCA Lightness Contrast value (negative = light text on dark background, positive = dark text on light background).
-- `apca.readability.*.meets` compares `Math.abs(apca.lc)` against the APCAeasyIntro “Use‑Case Ranges” thresholds:
+- `apca.polarity` indicates the contrast direction: `'light-on-dark'` or `'dark-on-light'`
+
+### 2. Minimum Font Size Lookup Table
+
+`apca.minimumFontSize` provides the minimum font size (in px) required for each font weight at the given contrast level:
+
+```ts
+apca.minimumFontSize: {
+  100: 48,    // weight 100 needs at least 48px
+  200: 32,    // weight 200 needs at least 32px
+  300: 21,
+  400: 16,    // weight 400 (normal) needs at least 16px
+  500: 15.5,
+  600: 14.5,
+  700: 14,    // weight 700 (bold) needs at least 14px
+  800: 16,
+  900: 18
+}
+```
+
+If a weight returns `'prohibited'`, the contrast is too low for any font size at that weight.
+
+### 3. Font Requirement Check (Optional)
+
+Pass `fontSize` and `fontWeight` in the options to get a `fontRequirement` result:
+
+```ts
+ColorCombos(['white', 'black'], {
+  apca: { fontSize: 16, fontWeight: 400 }
+});
+
+// Returns:
+apca.fontRequirement: {
+  fontSize: 16,
+  fontWeight: 400,
+  minimumFontSize: 16,      // minimum required at this weight
+  meetsRequirement: true    // 16px >= 16px minimum
+}
+```
+
+### 4. Readability Thresholds
+
+`apca.readability.*.meets` compares `Math.abs(apca.lc)` against the APCAeasyIntro "Use‑Case Ranges" thresholds:
   - `fluentText`: `Lc 90` (preferred; for fluent/body text columns at ≥14px/400)
   - `bodyText`: `Lc 75` (minimum; for body text columns at ≥18px/400)
   - `contentText`: `Lc 60` (minimum; for content text at ≥24px/400 or ≥16px/700)
@@ -367,6 +433,6 @@ Even though `#fff` and `rgb(255,255,255)` are the same color, `ColorCombos` will
 
 ### Caveats
 
-- APCA is the candidate contrast method for WCAG 3 and is still under development; these booleans are a convenience check against published guidance, not an official “conformance” result.
-- Thresholds are based on the reference font (Helvetica/Arial) and don’t account for font‑specific look‑up tables or other typographic factors (spacing, stroke width, etc).
+- APCA is the candidate contrast method for WCAG 3 and is still under development; these booleans are a convenience check against published guidance, not an official "conformance" result.
+- Font size lookup values are based on the reference font (Barlow) and may vary for other typefaces.
 - Inputs with alpha (e.g. `rgba(...)`) are not composited against a background for APCA; results assume opaque colors.

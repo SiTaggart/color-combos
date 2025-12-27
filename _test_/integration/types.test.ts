@@ -69,6 +69,16 @@ describe('ColorCombos TypeScript Integration', () => {
         expect(combo.apca?.readability).toBeDefined();
         expect(typeof combo.apca?.readability.bodyText.thresholdLc).toBe('number');
         expect(typeof combo.apca?.readability.bodyText.meets).toBe('boolean');
+
+        // Check minimumFontSize structure
+        expect(combo.apca?.minimumFontSize).toBeDefined();
+        const fontSizes = combo.apca?.minimumFontSize;
+        if (fontSizes) {
+          for (const weight of [100, 200, 300, 400, 500, 600, 700, 800, 900] as const) {
+            const size = fontSizes[weight];
+            expect(size === 'prohibited' || typeof size === 'number').toBe(true);
+          }
+        }
       }
     }
   });

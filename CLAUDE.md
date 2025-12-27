@@ -58,14 +58,14 @@ The entire library is contained in `src/index.ts` which exports a single default
 2. **Color Processing**: Uses the `color` library to parse various formats (hex, rgb, hsl, named colors)
 3. **Contrast Calculation**: Computes both WCAG 2.x ratios and APCA Lc values between all color pairs
 4. **WCAG 2.x Compliance**: Checks against AA (4.5:1), AA Large (3:1), AAA (7:1), and AAA Large (4.5:1) standards
-5. **APCA Support**: Returns Lc value, polarity (light-on-dark/dark-on-light), and readability threshold checks
-6. **Options**: Supports `compact` mode, `threshold` filtering, and `uniq` duplicate removal
+5. **APCA Support**: Returns Lc value, polarity (light-on-dark/dark-on-light), font size/weight lookup tables, and readability threshold checks
+6. **Options**: Supports `compact` mode, `threshold` filtering, `uniq` duplicate removal, and `apca` font size/weight checking
 
 ## Build Configuration
 
 - **Bun**: Native bundler that outputs both ESM (`dist/index.mjs`) and CJS (`dist/index.js`) formats
 - **TypeScript**: Targets ESNext with strict mode enabled, using Bun's native TypeScript support
-- **Bundle Size**: Must stay under 13kB (enforced by size-limit)
+- **Bundle Size**: Must stay under 14kB (enforced by size-limit)
 - **Build Script**: Custom `build.ts` script uses Bun's build API for bundling and `oxc-transform` for declaration files
 
 ## Release Process

@@ -2,6 +2,12 @@ import { calcAPCA } from 'apca-w3';
 import Color from 'color';
 import uniq from 'lodash.uniq';
 
+// fontLookupAPCA is exported but not in @types/apca-w3
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const { fontLookupAPCA } = require('apca-w3') as {
+  fontLookupAPCA: (contrast: number, places?: number) => (string | number)[];
+};
+
 interface ComboColor {
   color: number[];
   model: string;
@@ -22,9 +28,37 @@ export interface ApcaEvaluation {
   meets: boolean;
 }
 
+export type FontWeight = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+
+export interface MinimumFontSize {
+  100: number | 'prohibited';
+  200: number | 'prohibited';
+  300: number | 'prohibited';
+  400: number | 'prohibited';
+  500: number | 'prohibited';
+  600: number | 'prohibited';
+  700: number | 'prohibited';
+  800: number | 'prohibited';
+  900: number | 'prohibited';
+}
+
+export interface ApcaOptions {
+  fontSize?: number;
+  fontWeight?: FontWeight;
+}
+
+export interface FontRequirement {
+  fontSize: number;
+  fontWeight: FontWeight;
+  minimumFontSize: number | 'prohibited';
+  meetsRequirement: boolean;
+}
+
 export interface ApcaAccessibility {
   lc: number;
   polarity: 'light-on-dark' | 'dark-on-light';
+  minimumFontSize: MinimumFontSize;
+  fontRequirement?: FontRequirement;
   readability: {
     fluentText: ApcaEvaluation;
     bodyText: ApcaEvaluation;
@@ -57,6 +91,7 @@ interface Options {
   threshold?: number;
   compact?: boolean;
   uniq?: boolean;
+  apca?: ApcaOptions;
 }
 
 const ColorCombos = (
@@ -173,9 +208,34 @@ const ColorCombos = (
         if (typeof apcaLcRaw === 'number') {
           const apcaLc = apcaLcRaw;
           const absLc = Math.abs(apcaLc);
-          combination.apca = {
+
+          // Get font size lookup from APCA
+          // Returns: [lc, 100, 200, 300, 400, 500, 600, 700, 800, 900]
+          // Values 999/777 = prohibited (too low contrast or non-text only)
+          const fontLookup = fontLookupAPCA(apcaLc);
+          const parseSize = (val: string | number | undefined): number | 'prohibited' => {
+            if (typeof val === 'number' && val < 400) {
+              return val;
+            }
+            return 'prohibited';
+          };
+
+          const minimumFontSize: MinimumFontSize = {
+            100: parseSize(fontLookup[1]),
+            200: parseSize(fontLookup[2]),
+            300: parseSize(fontLookup[3]),
+            400: parseSize(fontLookup[4]),
+            500: parseSize(fontLookup[5]),
+            600: parseSize(fontLookup[6]),
+            700: parseSize(fontLookup[7]),
+            800: parseSize(fontLookup[8]),
+            900: parseSize(fontLookup[9]),
+          };
+
+          const apca: ApcaAccessibility = {
             lc: apcaLc,
             polarity: apcaLc < 0 ? 'light-on-dark' : 'dark-on-light',
+            minimumFontSize,
             readability: {
               fluentText: { thresholdLc: 90, meets: absLc >= 90 },
               bodyText: { thresholdLc: 75, meets: absLc >= 75 },
@@ -185,6 +245,20 @@ const ColorCombos = (
               nonText: { thresholdLc: 15, meets: absLc >= 15 },
             },
           };
+
+          // Add font requirement check if fontSize and fontWeight provided
+          if (combinedOptions.apca?.fontSize && combinedOptions.apca?.fontWeight) {
+            const { fontSize, fontWeight } = combinedOptions.apca;
+            const minSize = minimumFontSize[fontWeight];
+            apca.fontRequirement = {
+              fontSize,
+              fontWeight,
+              minimumFontSize: minSize,
+              meetsRequirement: minSize !== 'prohibited' && fontSize >= minSize,
+            };
+          }
+
+          combination.apca = apca;
         }
 
         return combination;

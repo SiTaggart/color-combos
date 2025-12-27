@@ -88,11 +88,11 @@
   "size-limit": [
     {
       "path": "dist/*.js",
-      "limit": "13 kB"
+      "limit": "14 kB"
     },
     {
       "path": "dist/*.mjs",
-      "limit": "13 kB",
+      "limit": "14 kB",
       "import": "ColorCombos"
     }
   ],
