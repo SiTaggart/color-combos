@@ -1,12 +1,6 @@
-import { calcAPCA } from 'apca-w3';
+import { calcAPCA, fontLookupAPCA } from 'apca-w3';
 import Color from 'color';
 import uniq from 'lodash.uniq';
-
-// fontLookupAPCA is exported but not in @types/apca-w3
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const { fontLookupAPCA } = require('apca-w3') as {
-  fontLookupAPCA: (contrast: number, places?: number) => (string | number)[];
-};
 
 interface ComboColor {
   color: number[];
@@ -211,10 +205,12 @@ const ColorCombos = (
 
           // Get font size lookup from APCA
           // Returns: [lc, 100, 200, 300, 400, 500, 600, 700, 800, 900]
-          // Values 999/777 = prohibited (too low contrast or non-text only)
+          // APCA uses sentinel values: 999 = prohibited, 777 = non-text only
+          // Valid font sizes are always < 400px, so we use this as the threshold
+          const APCA_PROHIBITED_THRESHOLD = 400;
           const fontLookup = fontLookupAPCA(apcaLc);
           const parseSize = (val: string | number | undefined): number | 'prohibited' => {
-            if (typeof val === 'number' && val < 400) {
+            if (typeof val === 'number' && val < APCA_PROHIBITED_THRESHOLD) {
               return val;
             }
             return 'prohibited';
@@ -247,7 +243,11 @@ const ColorCombos = (
           };
 
           // Add font requirement check if fontSize and fontWeight provided
-          if (combinedOptions.apca?.fontSize && combinedOptions.apca?.fontWeight) {
+          if (
+            combinedOptions.apca?.fontSize &&
+            combinedOptions.apca?.fontWeight &&
+            Number.isFinite(combinedOptions.apca.fontSize)
+          ) {
             const { fontSize, fontWeight } = combinedOptions.apca;
             const minSize = minimumFontSize[fontWeight];
             apca.fontRequirement = {
