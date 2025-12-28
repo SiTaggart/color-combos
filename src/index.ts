@@ -1,3 +1,4 @@
+import { calcAPCA, fontLookupAPCA } from 'apca-w3';
 import Color from 'color';
 import uniq from 'lodash.uniq';
 
@@ -16,6 +17,52 @@ export interface Accessibility {
   aaaLarge: boolean;
 }
 
+export interface ApcaEvaluation {
+  thresholdLc: number;
+  meets: boolean;
+}
+
+export type FontWeight = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+
+export interface MinimumFontSize {
+  100: number | 'prohibited';
+  200: number | 'prohibited';
+  300: number | 'prohibited';
+  400: number | 'prohibited';
+  500: number | 'prohibited';
+  600: number | 'prohibited';
+  700: number | 'prohibited';
+  800: number | 'prohibited';
+  900: number | 'prohibited';
+}
+
+export interface ApcaOptions {
+  fontSize?: number;
+  fontWeight?: FontWeight;
+}
+
+export interface FontRequirement {
+  fontSize: number;
+  fontWeight: FontWeight;
+  minimumFontSize: number | 'prohibited';
+  meetsRequirement: boolean;
+}
+
+export interface ApcaAccessibility {
+  lc: number;
+  polarity: 'light-on-dark' | 'dark-on-light';
+  minimumFontSize: MinimumFontSize;
+  fontRequirement?: FontRequirement;
+  readability: {
+    fluentText: ApcaEvaluation;
+    bodyText: ApcaEvaluation;
+    contentText: ApcaEvaluation;
+    largeText: ApcaEvaluation;
+    minimumText: ApcaEvaluation;
+    nonText: ApcaEvaluation;
+  };
+}
+
 export interface Combination {
   accessibility: Accessibility;
   color?: number[];
@@ -23,6 +70,7 @@ export interface Combination {
   hex: string;
   model?: string;
   valpha?: number;
+  apca?: ApcaAccessibility;
 }
 
 export interface ColorCombo {
@@ -37,6 +85,7 @@ interface Options {
   threshold?: number;
   compact?: boolean;
   uniq?: boolean;
+  apca?: ApcaOptions;
 }
 
 const ColorCombos = (
@@ -148,6 +197,69 @@ const ColorCombos = (
           aaa: combination.contrast >= MINIMUMS.aaa,
           aaaLarge: combination.contrast >= MINIMUMS.aaaLarge,
         };
+
+        const apcaLcRaw = calcAPCA(color.hex(), bg.hex());
+        if (typeof apcaLcRaw === 'number') {
+          const apcaLc = apcaLcRaw;
+          const absLc = Math.abs(apcaLc);
+
+          // Get font size lookup from APCA
+          // Returns: [lc, 100, 200, 300, 400, 500, 600, 700, 800, 900]
+          // APCA uses sentinel values: 999 = prohibited, 777 = non-text only
+          // Valid font sizes are always < 400px, so we use this as the threshold
+          const APCA_PROHIBITED_THRESHOLD = 400;
+          const fontLookup = fontLookupAPCA(apcaLc);
+          const parseSize = (val: string | number | undefined): number | 'prohibited' => {
+            if (typeof val === 'number' && val < APCA_PROHIBITED_THRESHOLD) {
+              return val;
+            }
+            return 'prohibited';
+          };
+
+          const minimumFontSize: MinimumFontSize = {
+            100: parseSize(fontLookup[1]),
+            200: parseSize(fontLookup[2]),
+            300: parseSize(fontLookup[3]),
+            400: parseSize(fontLookup[4]),
+            500: parseSize(fontLookup[5]),
+            600: parseSize(fontLookup[6]),
+            700: parseSize(fontLookup[7]),
+            800: parseSize(fontLookup[8]),
+            900: parseSize(fontLookup[9]),
+          };
+
+          const apca: ApcaAccessibility = {
+            lc: apcaLc,
+            polarity: apcaLc < 0 ? 'light-on-dark' : 'dark-on-light',
+            minimumFontSize,
+            readability: {
+              fluentText: { thresholdLc: 90, meets: absLc >= 90 },
+              bodyText: { thresholdLc: 75, meets: absLc >= 75 },
+              contentText: { thresholdLc: 60, meets: absLc >= 60 },
+              largeText: { thresholdLc: 45, meets: absLc >= 45 },
+              minimumText: { thresholdLc: 30, meets: absLc >= 30 },
+              nonText: { thresholdLc: 15, meets: absLc >= 15 },
+            },
+          };
+
+          // Add font requirement check if fontSize and fontWeight provided
+          if (
+            combinedOptions.apca?.fontSize &&
+            combinedOptions.apca?.fontWeight &&
+            Number.isFinite(combinedOptions.apca.fontSize)
+          ) {
+            const { fontSize, fontWeight } = combinedOptions.apca;
+            const minSize = minimumFontSize[fontWeight];
+            apca.fontRequirement = {
+              fontSize,
+              fontWeight,
+              minimumFontSize: minSize,
+              meetsRequirement: minSize !== 'prohibited' && fontSize >= minSize,
+            };
+          }
+
+          combination.apca = apca;
+        }
 
         return combination;
       });

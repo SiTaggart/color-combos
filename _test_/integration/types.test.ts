@@ -61,6 +61,24 @@ describe('ColorCombos TypeScript Integration', () => {
         expect(typeof combo.accessibility.aaLarge).toBe('boolean');
         expect(typeof combo.accessibility.aaa).toBe('boolean');
         expect(typeof combo.accessibility.aaaLarge).toBe('boolean');
+
+        // Check APCA structure (apca is optional, but readability fields are required when present)
+        expect(combo.apca).toBeDefined();
+        expect(typeof combo.apca?.lc).toBe('number');
+        expect(['light-on-dark', 'dark-on-light']).toContain(combo.apca?.polarity);
+        expect(combo.apca?.readability).toBeDefined();
+        expect(typeof combo.apca?.readability.bodyText.thresholdLc).toBe('number');
+        expect(typeof combo.apca?.readability.bodyText.meets).toBe('boolean');
+
+        // Check minimumFontSize structure
+        expect(combo.apca?.minimumFontSize).toBeDefined();
+        const fontSizes = combo.apca?.minimumFontSize;
+        if (fontSizes) {
+          for (const weight of [100, 200, 300, 400, 500, 600, 700, 800, 900] as const) {
+            const size = fontSizes[weight];
+            expect(size === 'prohibited' || typeof size === 'number').toBe(true);
+          }
+        }
       }
     }
   });

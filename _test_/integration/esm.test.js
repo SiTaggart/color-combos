@@ -118,4 +118,70 @@ describe('ColorCombos ESM Integration', () => {
     expect(result[0]).toHaveProperty('hex');
     expect(result[0]).toHaveProperty('combinations');
   });
+
+  it('should provide APCA accessibility data', () => {
+    const result = ColorCombos(['white', 'black']);
+    const whiteCombo = result.find((c) => c.hex === '#FFFFFF');
+    const blackCombo = whiteCombo.combinations.find((c) => c.hex === '#000000');
+
+    // APCA should be present
+    expect(blackCombo.apca).toBeDefined();
+    expect(typeof blackCombo.apca.lc).toBe('number');
+    expect(blackCombo.apca.polarity).toBe('light-on-dark');
+
+    // White on black should have high negative Lc (around -108)
+    expect(blackCombo.apca.lc).toBeLessThan(-100);
+
+    // Readability thresholds should all be met for max contrast
+    expect(blackCombo.apca.readability.fluentText.meets).toBe(true);
+    expect(blackCombo.apca.readability.bodyText.meets).toBe(true);
+    expect(blackCombo.apca.readability.contentText.meets).toBe(true);
+    expect(blackCombo.apca.readability.largeText.meets).toBe(true);
+    expect(blackCombo.apca.readability.minimumText.meets).toBe(true);
+    expect(blackCombo.apca.readability.nonText.meets).toBe(true);
+  });
+
+  it('should detect correct APCA polarity', () => {
+    const result = ColorCombos(['black', 'white']);
+    const blackCombo = result.find((c) => c.hex === '#000000');
+    const whiteCombo = blackCombo.combinations.find((c) => c.hex === '#FFFFFF');
+
+    // Black text on white background = dark-on-light (positive Lc)
+    expect(whiteCombo.apca.polarity).toBe('dark-on-light');
+    expect(whiteCombo.apca.lc).toBeGreaterThan(100);
+  });
+
+  it('should provide minimumFontSize lookup table', () => {
+    const result = ColorCombos(['white', 'black']);
+    const whiteCombo = result.find((c) => c.hex === '#FFFFFF');
+    const blackCombo = whiteCombo.combinations.find((c) => c.hex === '#000000');
+
+    // minimumFontSize should be an object with font weights as keys
+    expect(blackCombo.apca.minimumFontSize).toBeDefined();
+    expect(typeof blackCombo.apca.minimumFontSize[400]).toBe('number');
+    expect(typeof blackCombo.apca.minimumFontSize[700]).toBe('number');
+
+    // For max contrast (white on black), all weights should have valid font sizes
+    for (const weight of [100, 200, 300, 400, 500, 600, 700, 800, 900]) {
+      expect(blackCombo.apca.minimumFontSize[weight]).not.toBe('prohibited');
+    }
+  });
+
+  it('should provide fontRequirement when fontSize and fontWeight are provided', () => {
+    const result = ColorCombos(['white', 'black'], {
+      apca: { fontSize: 16, fontWeight: 400 },
+    });
+    const whiteCombo = result.find((c) => c.hex === '#FFFFFF');
+    const blackCombo = whiteCombo.combinations.find((c) => c.hex === '#000000');
+
+    // fontRequirement should be present
+    expect(blackCombo.apca.fontRequirement).toBeDefined();
+    expect(blackCombo.apca.fontRequirement.fontSize).toBe(16);
+    expect(blackCombo.apca.fontRequirement.fontWeight).toBe(400);
+    expect(typeof blackCombo.apca.fontRequirement.minimumFontSize).toBe('number');
+    expect(typeof blackCombo.apca.fontRequirement.meetsRequirement).toBe('boolean');
+
+    // 16px at 400 weight should meet requirements for max contrast
+    expect(blackCombo.apca.fontRequirement.meetsRequirement).toBe(true);
+  });
 });
