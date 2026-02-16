@@ -7,6 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 **color-combos** is a modern TypeScript npm package that calculates color contrast ratios and WCAG accessibility ratings for color combinations. It helps developers ensure their color choices meet Web Content Accessibility Guidelines.
 
 **Modern Features:**
+
 - 🎯 **ESM-first** with CommonJS fallback via dual package exports
 - 🚀 **Built with Bun** for fast development and native TypeScript support
 - 📦 **Tree-shakeable** - marked as side-effect free
@@ -16,6 +17,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Key Commands
 
 ### Development
+
 ```bash
 # Install dependencies
 bun install
@@ -40,6 +42,7 @@ bun run size
 ```
 
 ### Testing
+
 - **Unit Tests**: Use Bun's native test runner, located in `src/_test_/`
 - **Integration Tests**: Test compiled code in `_test_/integration/`
   - `cjs.test.js` - Tests CommonJS build (`dist/index.js`)
