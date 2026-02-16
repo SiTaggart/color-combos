@@ -66,7 +66,7 @@ The default shape of the returned array can be expressed as:
 ## Installation
 
 ```js
-import ColorCombos from 'color-combos';
+import ColorCombos from "color-combos";
 ```
 
 ## Usage
@@ -95,15 +95,15 @@ The colors argument will accept either an array of colors as strings, or an obje
 #### Array
 
 ```js
-ColorCombos(['#fff', '#000']);
+ColorCombos(["#fff", "#000"]);
 ```
 
 #### Object
 
 ```js
 ColorCombos({
-  white: '#fff',
-  black: '#000',
+  white: "#fff",
+  black: "#000",
 });
 ```
 
@@ -159,7 +159,7 @@ Color strings are supported in a number of formats
 Passing more than two colors will result in the returned array and combinations increasing in size.
 
 ```js
-ColorCombos(['#fff', '#ccc', '#000']);
+ColorCombos(["#fff", "#ccc", "#000"]);
 ```
 
 returns
@@ -259,7 +259,7 @@ returns
 If all you're after is the accessibility information for each color combination you can set `compact` to true and `ColorCombos` will omit non-essential information about each color.
 
 ```js
-ColorCombos(['#fff', '#ccc', '#000'], { compact: true });
+ColorCombos(["#fff", "#ccc", "#000"], { compact: true });
 ```
 
 returns
@@ -319,7 +319,7 @@ returns
 If you would like to omit color combinations that do not meet a certain color contrast ratio, you can set a contrast ratio `threshold` and `ColorCombos` will omit colors that do not meet it.
 
 ```js
-ColorCombos(['#fff', '#ccc', '#000'], { compact: true, threshold: 3 });
+ColorCombos(["#fff", "#ccc", "#000"], { compact: true, threshold: 3 });
 ```
 
 This will omit color combinations that do not meet at least a color contrast ratio of 3:1 and returns:
@@ -369,7 +369,7 @@ This will omit color combinations that do not meet at least a color contrast rat
 By default, `ColorCombos` will only return uniq colors from the supplied arguments. If you would like it to not omit duplicates, set the `uniq` option to `false`
 
 ```js
-ColorCombos(['#fff', 'rgb(255,255,255)', '#000'], { compact: true, uniq: false });
+ColorCombos(["#fff", "rgb(255,255,255)", "#000"], { compact: true, uniq: false });
 ```
 
 Even though `#fff` and `rgb(255,255,255)` are the same color, `ColorCombos` will not omit the duplicate from the returned results.
@@ -424,12 +424,13 @@ apca.fontRequirement: {
 ### 4. Readability Thresholds
 
 `apca.readability.*.meets` compares `Math.abs(apca.lc)` against the APCAeasyIntro "Use‑Case Ranges" thresholds:
-  - `fluentText`: `Lc 90` (preferred; for fluent/body text columns at ≥14px/400)
-  - `bodyText`: `Lc 75` (minimum; for body text columns at ≥18px/400)
-  - `contentText`: `Lc 60` (minimum; for content text at ≥24px/400 or ≥16px/700)
-  - `largeText`: `Lc 45` (minimum; for large text/headlines at ≥36px/400 or ≥24px/700)
-  - `minimumText`: `Lc 30` (absolute minimum; for text not listed above, and large/solid non‑text)
-  - `nonText`: `Lc 15` (absolute minimum; for discernible non‑text ≥5px)
+
+- `fluentText`: `Lc 90` (preferred; for fluent/body text columns at ≥14px/400)
+- `bodyText`: `Lc 75` (minimum; for body text columns at ≥18px/400)
+- `contentText`: `Lc 60` (minimum; for content text at ≥24px/400 or ≥16px/700)
+- `largeText`: `Lc 45` (minimum; for large text/headlines at ≥36px/400 or ≥24px/700)
+- `minimumText`: `Lc 30` (absolute minimum; for text not listed above, and large/solid non‑text)
+- `nonText`: `Lc 15` (absolute minimum; for discernible non‑text ≥5px)
 
 ### Caveats
 

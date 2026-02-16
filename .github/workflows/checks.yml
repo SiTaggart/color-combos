@@ -21,8 +21,8 @@ jobs:
         run: bun test
       - name: "Test: integration"
         run: bun test _test_/integration
-      - name: "Lint & Format: biome ci"
-        run: bunx biome ci
+      - name: "Lint & Format: Oxc"
+        run: bun run lint && bun run format
   size:
     runs-on: ubuntu-latest
     env:

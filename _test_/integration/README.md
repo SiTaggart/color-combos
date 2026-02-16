@@ -5,7 +5,7 @@ This directory contains integration tests that verify the compiled code in the `
 ## Test Files
 
 - **`cjs.test.js`** - Tests the CommonJS build (`dist/index.js`)
-- **`esm.test.js`** - Tests the ESM build (`dist/index.mjs`)  
+- **`esm.test.js`** - Tests the ESM build (`dist/index.mjs`)
 - **`types.test.ts`** - Tests TypeScript definitions work correctly
 - **`node-compat.test.js`** - Tests Node.js compatibility and module loading
 

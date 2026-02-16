@@ -1,11 +1,11 @@
-import type { BunPlugin } from 'bun';
-import { $ } from 'bun';
-import { isolatedDeclaration } from 'oxc-transform';
+import type { BunPlugin } from "bun";
+import { $ } from "bun";
+import { isolatedDeclaration } from "oxc-transform";
 
 function getDtsBunPlugin(): BunPlugin {
   const wroteTrack = new Set<string>();
   return {
-    name: 'oxc-transform-dts',
+    name: "oxc-transform-dts",
     setup(builder) {
       if (builder.config.root && builder.config.outdir) {
         const rootPath = Bun.pathToFileURL(builder.config.root).pathname;
@@ -17,8 +17,8 @@ function getDtsBunPlugin(): BunPlugin {
             const code = await isolatedDeclaration(args.path, await Bun.file(args.path).text());
 
             await Bun.write(
-              args.path.replace(new RegExp(`^${rootPath}`), outPath).replace(/\.ts$/, '.d.ts'),
-              code.code
+              args.path.replace(new RegExp(`^${rootPath}`), outPath).replace(/\.ts$/, ".d.ts"),
+              code.code,
             );
           }
           return undefined;
@@ -33,28 +33,28 @@ async function build() {
 
   // Build ESM
   await Bun.build({
-    entrypoints: ['src/index.ts'],
-    root: 'src',
-    outdir: 'dist',
-    target: 'node',
-    format: 'esm',
-    naming: '[dir]/[name].mjs',
+    entrypoints: ["src/index.ts"],
+    root: "src",
+    outdir: "dist",
+    target: "node",
+    format: "esm",
+    naming: "[dir]/[name].mjs",
     plugins: [getDtsBunPlugin()],
-    minify: process.env.NODE_ENV === 'production',
-    sourcemap: process.env.NODE_ENV === 'development' ? 'external' : 'none',
+    minify: process.env.NODE_ENV === "production",
+    sourcemap: process.env.NODE_ENV === "development" ? "external" : "none",
   });
 
   // Build CJS
   await Bun.build({
-    entrypoints: ['src/index.ts'],
-    root: 'src',
-    outdir: 'dist',
-    target: 'node',
-    format: 'cjs',
-    naming: '[dir]/[name].js',
+    entrypoints: ["src/index.ts"],
+    root: "src",
+    outdir: "dist",
+    target: "node",
+    format: "cjs",
+    naming: "[dir]/[name].js",
     plugins: [getDtsBunPlugin()],
-    minify: process.env.NODE_ENV === 'production',
-    sourcemap: process.env.NODE_ENV === 'development' ? 'external' : 'none',
+    minify: process.env.NODE_ENV === "production",
+    sourcemap: process.env.NODE_ENV === "development" ? "external" : "none",
   });
 }
 

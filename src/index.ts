@@ -1,6 +1,6 @@
-import { calcAPCA, fontLookupAPCA } from 'apca-w3';
-import Color from 'color';
-import uniq from 'lodash.uniq';
+import { calcAPCA, fontLookupAPCA } from "apca-w3";
+import Color from "color";
+import uniq from "lodash.uniq";
 
 interface ComboColor {
   color: number[];
@@ -25,15 +25,15 @@ export interface ApcaEvaluation {
 export type FontWeight = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 
 export interface MinimumFontSize {
-  100: number | 'prohibited';
-  200: number | 'prohibited';
-  300: number | 'prohibited';
-  400: number | 'prohibited';
-  500: number | 'prohibited';
-  600: number | 'prohibited';
-  700: number | 'prohibited';
-  800: number | 'prohibited';
-  900: number | 'prohibited';
+  100: number | "prohibited";
+  200: number | "prohibited";
+  300: number | "prohibited";
+  400: number | "prohibited";
+  500: number | "prohibited";
+  600: number | "prohibited";
+  700: number | "prohibited";
+  800: number | "prohibited";
+  900: number | "prohibited";
 }
 
 export interface ApcaOptions {
@@ -44,13 +44,13 @@ export interface ApcaOptions {
 export interface FontRequirement {
   fontSize: number;
   fontWeight: FontWeight;
-  minimumFontSize: number | 'prohibited';
+  minimumFontSize: number | "prohibited";
   meetsRequirement: boolean;
 }
 
 export interface ApcaAccessibility {
   lc: number;
-  polarity: 'light-on-dark' | 'dark-on-light';
+  polarity: "light-on-dark" | "dark-on-light";
   minimumFontSize: MinimumFontSize;
   fontRequirement?: FontRequirement;
   readability: {
@@ -90,7 +90,7 @@ interface Options {
 
 const ColorCombos = (
   colors: string[] | { [name: string]: string },
-  options: Options = {}
+  options: Options = {},
 ): ColorCombo[] | false => {
   let arr: ComboColor[] = [];
   let results: ColorCombo[] = [];
@@ -124,29 +124,29 @@ const ColorCombos = (
     if (uniqueColors !== undefined) {
       arr = uniqueColors.map((color) => Color(color) as unknown as ComboColor);
     }
-  } else if (typeof colors === 'object') {
+  } else if (typeof colors === "object") {
     arr = Object.keys(colors).map((key) => Color(colors[key]) as unknown as ComboColor);
 
     if (combinedOptions.uniq) {
       arr = uniq(arr);
     }
   } else {
-    // biome-ignore lint/suspicious/noConsole: maintain backward compatibility
-    console.error('Must provide an array or object');
+    // Preserve existing behavior for invalid inputs in pre-existing integrations.
+    console.error("Must provide an array or object");
     return false;
   }
 
   results = arr.map((color): ColorCombo => {
     const result: ColorCombo = combinedOptions.compact
       ? {
-          hex: '',
+          hex: "",
           combinations: [],
         }
       : {
           color: color.color,
           model: color.model,
           valpha: color.valpha,
-          hex: '',
+          hex: "",
           combinations: [],
         };
 
@@ -169,7 +169,7 @@ const ColorCombos = (
                 aaa: false,
                 aaaLarge: false,
               },
-              hex: '',
+              hex: "",
               contrast: 0,
             }
           : {
@@ -179,7 +179,7 @@ const ColorCombos = (
                 aaa: false,
                 aaaLarge: false,
               },
-              hex: '',
+              hex: "",
               contrast: 0,
               color: bg.color,
               model: bg.model,
@@ -199,7 +199,7 @@ const ColorCombos = (
         };
 
         const apcaLcRaw = calcAPCA(color.hex(), bg.hex());
-        if (typeof apcaLcRaw === 'number') {
+        if (typeof apcaLcRaw === "number") {
           const apcaLc = apcaLcRaw;
           const absLc = Math.abs(apcaLc);
 
@@ -209,11 +209,11 @@ const ColorCombos = (
           // Valid font sizes are always < 400px, so we use this as the threshold
           const APCA_PROHIBITED_THRESHOLD = 400;
           const fontLookup = fontLookupAPCA(apcaLc);
-          const parseSize = (val: string | number | undefined): number | 'prohibited' => {
-            if (typeof val === 'number' && val < APCA_PROHIBITED_THRESHOLD) {
+          const parseSize = (val: string | number | undefined): number | "prohibited" => {
+            if (typeof val === "number" && val < APCA_PROHIBITED_THRESHOLD) {
               return val;
             }
-            return 'prohibited';
+            return "prohibited";
           };
 
           const minimumFontSize: MinimumFontSize = {
@@ -230,7 +230,7 @@ const ColorCombos = (
 
           const apca: ApcaAccessibility = {
             lc: apcaLc,
-            polarity: apcaLc < 0 ? 'light-on-dark' : 'dark-on-light',
+            polarity: apcaLc < 0 ? "light-on-dark" : "dark-on-light",
             minimumFontSize,
             readability: {
               fluentText: { thresholdLc: 90, meets: absLc >= 90 },
@@ -254,7 +254,7 @@ const ColorCombos = (
               fontSize,
               fontWeight,
               minimumFontSize: minSize,
-              meetsRequirement: minSize !== 'prohibited' && fontSize >= minSize,
+              meetsRequirement: minSize !== "prohibited" && fontSize >= minSize,
             };
           }
 
