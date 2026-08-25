@@ -71,7 +71,7 @@
     "@types/color": "4.2.1",
     "@types/lodash": "4.17.25",
     "@types/lodash.uniq": "4.5.9",
-    "@types/node": "25.9.5",
+    "@types/node": "26.3.0",
     "husky": "9.1.7",
     "oxc-transform": "0.146.0",
     "oxfmt": "0.64.0",
