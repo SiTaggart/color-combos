@@ -97,7 +97,7 @@
     }
   ],
   "engines": {
-    "bun": ">=1.0.0",
+    "bun": "1.4.2",
     "node": "24.20.0"
   },
   "entry": "src/index.ts"
