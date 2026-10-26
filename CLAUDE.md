@@ -68,7 +68,7 @@ The entire library is contained in `src/index.ts` which exports a single default
 
 - **Bun**: Native bundler that outputs both ESM (`dist/index.mjs`) and CJS (`dist/index.js`) formats
 - **TypeScript**: Targets ESNext with strict mode enabled, using Bun's native TypeScript support
-- **Bundle Size**: 13.07 kB for `dist/index.js` and 12.86 kB for `dist/index.mjs`, minified and brotlied (size-limit)
+- **Bundle Size**: Must stay under 14 kB per file, minified and brotlied, enforced by size-limit (the size job prints the current size)
 - **Build Script**: Custom `build.ts` script uses Bun's build API for bundling and `oxc-transform` for declaration files
 
 ## Release Process
