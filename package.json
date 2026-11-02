@@ -71,11 +71,11 @@
     "@types/color": "4.2.1",
     "@types/lodash": "4.17.27",
     "@types/lodash.uniq": "4.5.9",
-    "@types/node": "26.6.5",
+    "@types/node": "26.6.6",
     "husky": "9.1.7",
-    "oxc-transform": "0.155.0",
-    "oxfmt": "0.74.0",
-    "oxlint": "1.89.0",
+    "oxc-transform": "0.156.0",
+    "oxfmt": "0.75.0",
+    "oxlint": "1.90.0",
     "precise-commits": "1.0.2",
     "semantic-release": "25.0.9",
     "size-limit": "14.3.0"
@@ -98,7 +98,7 @@
   ],
   "engines": {
     "bun": "1.4.4",
-    "node": "24.22.1"
+    "node": "24.22.2"
   },
   "packageManager": "bun@1.4.4",
   "entry": "src/index.ts"
