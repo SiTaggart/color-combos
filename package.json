@@ -73,9 +73,9 @@
     "@types/lodash.uniq": "4.5.9",
     "@types/node": "26.6.6",
     "husky": "9.1.7",
-    "oxc-transform": "0.156.0",
-    "oxfmt": "0.75.0",
-    "oxlint": "1.90.0",
+    "oxc-transform": "0.157.0",
+    "oxfmt": "0.77.0",
+    "oxlint": "1.92.0",
     "precise-commits": "1.0.2",
     "semantic-release": "25.0.9",
     "size-limit": "14.3.0"
